@@ -23,7 +23,7 @@
 
 ## Technical Rules
 
-12. **JSON-LD schema on every page** — Product, ItemList, FAQPage as applicable. Non-negotiable for AI search visibility.
+12. **JSON-LD schema on every page** — Product, ItemList, FAQPage as applicable. Non-negotiable for AI search visibility. **AND visible HTML must be equally structured** — AI chatbots parse visible HTML, not JSON-LD. Pros/cons in `<ul>/<li>`, specs in tables, "Choose this if" in distinct elements.
 13. **EmailCapture on every page** — The email list is the real business. The site is the acquisition tool.
 14. **Click tracking on every affiliate link** — Every OutboundLink fires POST to `/api/track-click`.
 15. **Mobile first** — Every component designed for phone first, enhanced for desktop.
@@ -39,6 +39,14 @@
 
 ---
 
+## Research-Validated Additions (Day 2 — Multi-LLM Research)
+
+22. **E-E-A-T signals on every content page** — Author attribution, transparent methodology ("How We Picked"), trust indicators. Required by Google and AI answer engines for citation eligibility.
+23. **Product schema must be enriched** — Every Product JSON-LD needs: brand, image, sku, url, description, and full Offer object. Basic name+price is insufficient for rich results.
+24. **Visible HTML is as important as JSON-LD** — AI chatbots (ChatGPT, Claude, Perplexity) read visible page content, not schema markup. Structure content for both machines and humans.
+
+---
+
 ## Common Mistakes to Avoid
 
 - Adding more than 7 products to a page ("just one more" — NO)
@@ -48,3 +56,6 @@
 - Skipping JSON-LD because "we'll add it later"
 - Skipping EmailCapture because "the page is short"
 - Publishing without running the pre-publish checklist
+- Relying on JSON-LD alone for "AI-friendly" — visible HTML must also be structured
+- Missing author attribution or "How We Picked" methodology (E-E-A-T)
+- Using basic Product schema (name+price only) when brand/image/sku/description are available

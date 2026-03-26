@@ -64,6 +64,10 @@
 - [ ] FB ad campaign ($5–$10/day CAD)
 - [ ] Ad → landing page → email capture → ConvertKit sequence
 - [ ] Weekly click analysis — kill low performers, double down on winners
+- [ ] Enrich Product schema (brand, image, sku, url, description) — from Multi-LLM Research
+- [ ] Ensure visible HTML is structured for AI parsing (not just JSON-LD) — from Multi-LLM Research
+- [ ] Add author attribution to content pages (E-E-A-T signal) — from Multi-LLM Research
+- [ ] Lead magnet PDF: seasonal deals guide — from Multi-LLM Research
 
 **KPI:** 200 email subscribers
 
@@ -78,6 +82,10 @@
 - [ ] 3–5 evergreen guides published
 - [ ] Pre-publish checklist enforced on every page
 - [ ] Re-engagement email campaign for Phase 1 subscribers
+- [ ] Province-level landing pages (Ontario, BC, Alberta) — from Multi-LLM Research
+- [ ] Content calendar tied to seasonal events — from Multi-LLM Research
+- [ ] Additional affiliate networks: Rakuten (Walmart CA), CJ (Indigo, Lowe's) — from Multi-LLM Research
+- [ ] Skimlinks as auto-affiliate option — from Multi-LLM Research
 
 **KPI:** First affiliate commissions earned
 
@@ -110,9 +118,72 @@
 
 ---
 
+## Multi-LLM Research Synthesis (Day 2)
+
+> Full research: `docs/Research/Multi_LLM_Research_1.md`
+> Sources: GPT-4, Grok — cross-validated against GEO/AEO literature, arXiv papers, 2025-2026 industry guides
+
+### What's VERIFIED (we're on the right track)
+
+| Strategy | Verdict | Status in SmartShopCA |
+|:--|:--|:--|
+| 3–7 curated picks per scenario | VERIFIED | Built — CollectionGrid caps at 7 |
+| "Choose this if / Avoid this if" framing | VERIFIED (30–40% GEO visibility lift) | Built — chooseIf/avoidIf in every product MDX |
+| JSON-LD schema (Product, ItemList, FAQPage) | VERIFIED for traditional SEO + Google AI Overviews | Built — JsonLd component on all pages |
+| Diversified affiliate stack (not Amazon-only) | VERIFIED | Architecture supports it — awaiting real links |
+| Email-first growth strategy | VERIFIED (organic search declining for niche sites) | Built — EmailCapture on all content pages |
+| Answer-first format (TL;DR + direct answers) | VERIFIED | Built — TL;DR blocks on content pages |
+| FAQ sections targeting real queries | VERIFIED | Built — FAQBlock component with schema |
+| Province-level pages ("National → Province → City") | VERIFIED for Canadian local relevance | Planned for Phase 2 |
+
+### Key Correction: JSON-LD Is Not Enough
+
+**MISLEADING claim corrected:** Current AI chatbots (ChatGPT, Claude, Perplexity) parse **visible HTML**, not JSON-LD, when browsing. JSON-LD helps Google AI Overviews + Bing Copilot, but for direct AI citation:
+- Visible HTML must be equally structured (H2/H3 hierarchy, `<ul>/<li>` for pros/cons)
+- "Choose this if" must be in a distinct element, not buried in paragraphs
+- Comparison tables must be in `<table>` elements, not just visual grids
+
+**Action:** Audit all components to ensure visible HTML is machine-readable (tracked in MASTER_AUDIT_FRAMEWORK Category 3 + Category 8).
+
+### Product Schema Enrichment Needed
+
+Current Product schema is basic (name + price). Research says each Product needs:
+- `brand`, `image`, `sku`, `url`, `description` (all sources agree)
+- `aggregateRating` (only when real reviews exist — no fabrication)
+- Full `Offer` object with `availability`, `priceCurrency: "CAD"`
+
+**Action:** Enrich JsonLd component and Product type — Phase 1 task.
+
+### New Roadmap Items From Research
+
+**Phase 1 additions:**
+- [ ] Enrich Product schema (brand, image, sku, url, description fields)
+- [ ] Ensure visible HTML is structured for AI parsing (not just JSON-LD)
+- [ ] Lead magnet PDF: seasonal deals guide (verified tactic for email capture)
+- [ ] Author attribution on content pages (E-E-A-T signal)
+
+**Phase 2 additions:**
+- [ ] Province-level landing pages (Ontario, BC, Alberta — verified architecture)
+- [ ] Content calendar tied to seasonal events (quarterly rotation framework)
+- [ ] Additional affiliate networks: Rakuten (Walmart CA), Impact (Best Buy CA), CJ (Indigo, Lowe's)
+- [ ] Skimlinks as auto-affiliate option for content-heavy pages
+
+### What Grok Flagged (Tech Stack Debate)
+
+Grok recommended Wix/Squarespace for beginners instead of Next.js. **Our decision: keep Next.js.** Reasons:
+- Developer has code ownership goals (not a drag-and-drop user)
+- Next.js gives full control over schema, SSG/ISR, and component architecture
+- Already scaffolded and deployed — switching cost > benefit
+- Custom click tracking and campaign system would be harder on no-code platforms
+
+This is documented as a conscious trade-off, not an oversight.
+
+---
+
 ## Version Log
 
 | Version | Date | Summary |
 |:--|:--|:--|
 | v0.0.0 | 2026-03-25 | Project setup, docs structure adopted |
 | v0.1.0 | 2026-03-25 | Full scaffold: Next.js 14, 8 components, 4 pages, API route, 5 seed products, build passing |
+| v0.1.1 | 2026-03-26 | Multi-LLM Research synthesis, Master Audit Framework (8 categories), Golden Rules R22-R24 added |
