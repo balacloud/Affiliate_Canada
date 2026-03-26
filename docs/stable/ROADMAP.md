@@ -51,7 +51,7 @@
 - [x] Build click tracker API route (/api/track-click) (Day 1)
 - [x] Create 5 seed products (MDX) (Day 1)
 - [x] Create 1 seed collection (MDX) (Day 1)
-- [ ] Deploy to Vercel (blocked on user — needs GitHub repo + Vercel account)
+- [x] Deploy to Vercel — www.smartshopca.ca live (Day 1)
 
 ---
 

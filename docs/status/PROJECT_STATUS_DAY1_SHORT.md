@@ -46,9 +46,17 @@
 |:--|:--|:--|:--|:--|
 | 0 | 0 | 2 | 4 | 6 |
 
+## Late Day 1 Updates
+
+- GitHub repo connected: github.com/balacloud/Affiliate_Canada
+- Pushed initial commit (53 files)
+- Vercel deployed: www.smartshopca.ca live (Production, auto-deploys from main)
+- GoDaddy DNS configured: A record → 76.76.21.21, CNAME www → cname.vercel-dns.com
+- DNS propagated and SSL active
+
 ## Next (Day 2)
 
-- P0: User creates GitHub repo + Vercel → deploy
 - P1: Wire up ConvertKit when API key provided
 - P1: Add product images
 - P2: MDX content loading for guides
+- P2: Add deals/[slug] individual product pages

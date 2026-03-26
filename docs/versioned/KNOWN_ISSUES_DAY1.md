@@ -4,14 +4,14 @@
 
 | ID | Severity | Description |
 |:--|:--|:--|
-| KI-001 | MEDIUM | Git repo initialized |
+| KI-001 | MEDIUM | Git repo initialized + pushed to github.com/balacloud/Affiliate_Canada |
+| KI-002 | MEDIUM | Vercel deployed — www.smartshopca.ca live, DNS propagated, SSL active |
 | KI-006 | LOW | .gitignore created |
 
 ## Still Open
 
 | ID | Severity | Description |
 |:--|:--|:--|
-| KI-002 | MEDIUM | No Vercel account connected (blocked on user) |
 | KI-003 | MEDIUM | No ConvertKit account — EmailCapture is placeholder (blocked on user) |
 | KI-004 | LOW | Affiliate accounts not yet applied — product links are placeholders (blocked on user) |
 | KI-005 | LOW | Google Search Console not set up (blocked on user) |
@@ -22,4 +22,4 @@
 
 | CRITICAL | HIGH | MEDIUM | LOW | Total |
 |:--|:--|:--|:--|:--|
-| 0 | 0 | 2 | 4 | 6 |
+| 0 | 0 | 1 | 4 | 5 |

@@ -1,6 +1,6 @@
 # SmartShopCA.ca — Master Session Guide
 
-> **Last Updated:** 2026-03-25 (Day 1 — Full Scaffold)
+> **Last Updated:** 2026-03-26 (Day 1 close — deployed, DNS live)
 > **Current Version:** v0.1.0 (scaffold complete, build passing)
 > **Active Campaign:** Q2_2026_SPRING
 
@@ -89,7 +89,7 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Campaign config | DONE | config/campaigns.ts — 4 seasons, ACTIVE_CAMPAIGN = Q2_2026_SPRING |
 | Seed content | DONE | 5 products + 1 collection in /content/ |
 | Build | PASSING | `next build` — 11 pages generated, 0 errors |
-| Vercel deploy | NOT STARTED | Needs GitHub repo + Vercel account (blocked on user) |
+| Vercel deploy | DONE | www.smartshopca.ca — Production, auto-deploys from main |
 | ConvertKit | NOT STARTED | EmailCapture has placeholder — needs API key (blocked on user) |
 | Affiliate accounts | NOT STARTED | Product links are placeholders (blocked on user) |
 | Google Search Console | NOT STARTED | Needs Vercel DNS verification (blocked on user) |
@@ -102,16 +102,16 @@ Email is the spine. SEO and AI search citations build on top over time.
 
 | ID | Severity | Description |
 |:--|:--|:--|
-| KI-002 | MEDIUM | No Vercel account connected (blocked on user) |
+| ~~KI-002~~ | ~~MEDIUM~~ | ~~Vercel connected — www.smartshopca.ca live~~ RESOLVED |
 | KI-003 | MEDIUM | No ConvertKit account — EmailCapture is placeholder (blocked on user) |
 | KI-004 | LOW | Affiliate accounts not yet applied — product links are placeholders (blocked on user) |
 | KI-005 | LOW | Google Search Console not set up (blocked on user) |
 | KI-007 | LOW | Seed product images are empty — no product photos yet |
 | KI-008 | LOW | Guide pages use hardcoded data — need MDX content loading in Phase 1 |
 
-**Resolved Day 1:** KI-001 (git repo initialized), KI-006 (.gitignore created)
+**Resolved Day 1:** KI-001 (git repo initialized), KI-002 (Vercel deployed — www.smartshopca.ca), KI-006 (.gitignore created)
 
-**Summary:** 0 CRITICAL, 0 HIGH, 2 MEDIUM, 4 LOW (6 total)
+**Summary:** 0 CRITICAL, 0 HIGH, 1 MEDIUM, 4 LOW (5 total)
 
 ---
 
@@ -120,7 +120,7 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Day | Date | Summary |
 |:--|:--|:--|
 | Day 0 | 2026-03-25 | Project setup: consolidated plan, adopted docs structure from options-iq |
-| Day 1 | 2026-03-25 | Full scaffold: git init, Next.js 14 project, all types/config/lib, 8 components, 4 pages, API route, 5 seed products + 1 collection. Build passing. |
+| Day 1 | 2026-03-25 | Full scaffold: git init, Next.js 14, 8 components, 4 pages, API route, 5 seed products + 1 collection. Build passing. GitHub pushed, Vercel deployed, DNS configured — www.smartshopca.ca live. |
 
 ---
 
