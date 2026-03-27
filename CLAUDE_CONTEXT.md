@@ -1,6 +1,6 @@
 # SmartShopCA.ca — Master Session Guide
 
-> **Last Updated:** 2026-03-26 (Day 2 — research synthesis, audit framework, golden rules updated)
+> **Last Updated:** 2026-03-27 (Day 2 close — MailerLite decision, logo plan, next steps locked)
 > **Current Version:** v0.1.1 (research + audit framework added)
 > **Active Campaign:** Q2_2026_SPRING
 
@@ -102,7 +102,7 @@ Email is the spine. SEO and AI search citations build on top over time.
 
 | ID | Severity | Description |
 |:--|:--|:--|
-| KI-003 | MEDIUM | No ConvertKit account — EmailCapture is placeholder (blocked on user) |
+| KI-003 | MEDIUM | No MailerLite account — EmailCapture is placeholder (ConvertKit rejected — too costly) |
 | KI-004 | LOW | Affiliate accounts not yet applied — product links are placeholders (blocked on user) |
 | KI-005 | LOW | Google Search Console not set up (blocked on user) |
 | KI-007 | LOW | Seed product images are empty — no product photos yet |
@@ -124,19 +124,24 @@ Email is the spine. SEO and AI search citations build on top over time.
 |:--|:--|:--|
 | Day 0 | 2026-03-25 | Project setup: consolidated plan, adopted docs structure from options-iq |
 | Day 1 | 2026-03-25 | Full scaffold: git init, Next.js 14, 8 components, 4 pages, API route, 5 seed products + 1 collection. Build passing. GitHub pushed, Vercel deployed, DNS configured — www.smartshopca.ca live. |
-| Day 2 | 2026-03-26 | Multi-LLM Research reviewed + synthesized. Master Audit Framework created (8 categories). Golden Rules updated with 3 new research-backed rules (R22-R24). Roadmap updated with research findings + new Phase 1/2 items. |
+| Day 2 | 2026-03-26 | Multi-LLM Research reviewed + synthesized. Master Audit Framework created (8 categories). Golden Rules updated with 3 new research-backed rules (R22-R24). Roadmap updated with research findings + new Phase 1/2 items. Decided: MailerLite over ConvertKit (cost). Text-based SVG logo planned for Day 3. |
 
 ---
 
 ## Next Session Priorities (Day 3)
 
-> See `docs/stable/ROADMAP.md` → Phase 0/1 items.
+> See `docs/stable/ROADMAP.md` → Phase 1 items.
 
-- **P1:** Enrich Product schema (brand, image, sku, url, description) — research-validated
-- **P1:** Ensure visible HTML is structured for AI parsing (audit Category 3/8)
-- **P1:** Add author attribution to content pages (E-E-A-T — Rule 22)
-- **P1:** User provides ConvertKit API key → wire up EmailCapture
-- **P1:** Add product images to seed data (KI-007)
-- **P2:** Build MDX content loading for guides (KI-008)
+**Claude Code tasks (no user input needed):**
+- **P1:** Build text-based SVG logo component
+- **P1:** Enrich Product schema (brand, image, sku, url, description) — KI-009 HIGH
+- **P1:** Structure visible HTML for AI parsing — KI-010 HIGH
+- **P1:** Add author attribution to content pages (E-E-A-T) — KI-011
+- **P1:** Create /privacy page (PIPEDA requirement) — KI-012
+- **P2:** Build MDX content loading for guides — KI-008
 - **P2:** Add deals/[slug] individual product pages
-- **P3:** Run first full audit using MASTER_AUDIT_FRAMEWORK
+
+**Blocked on user (do in parallel):**
+- Sign up for MailerLite → share API key + form ID → wire EmailCapture — KI-003
+- Apply for affiliate programs (Best Buy CA via Impact, Newegg, Amazon.ca, MaxBounty) — KI-004
+- Set up Google Search Console — KI-005

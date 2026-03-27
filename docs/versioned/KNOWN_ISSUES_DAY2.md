@@ -8,7 +8,7 @@
 
 | ID | Severity | Description |
 |:--|:--|:--|
-| KI-003 | MEDIUM | No ConvertKit account — EmailCapture is placeholder (blocked on user) |
+| KI-003 | MEDIUM | No MailerLite account — EmailCapture is placeholder (blocked on user; ConvertKit rejected as too costly) |
 | KI-004 | LOW | Affiliate accounts not yet applied — product links are placeholders (blocked on user) |
 | KI-005 | LOW | Google Search Console not set up (blocked on user) |
 | KI-007 | LOW | Seed product images are empty — no product photos yet |

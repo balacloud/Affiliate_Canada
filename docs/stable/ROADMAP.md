@@ -20,11 +20,11 @@
   - [ ] Newegg Canada
   - [ ] Amazon.ca Associates
   - [ ] MaxBounty (requires phone interview — apply ASAP)
-- [ ] Sign up for Kit (ConvertKit) — free up to 10,000 subscribers
+- [ ] Sign up for **MailerLite** (not ConvertKit — too costly) — free up to 1,000 subscribers
   - [ ] Create form: "SmartShopCA Spring 2026 Deals"
-  - [ ] Get API key and Form ID
-  - [ ] Create 3-email welcome sequence
-- [ ] Provide Kit API key + Form ID to Claude Code
+  - [ ] Get API key and Group/Form ID
+  - [ ] Create 5-email welcome sequence (see Email Onboarding in Multi-LLM Research)
+- [ ] Provide MailerLite API key + Form ID to Claude Code
 - [ ] Set up Google Search Console (verify via Vercel DNS)
 - [ ] Set up affiliate tracking spreadsheet
 
@@ -62,7 +62,7 @@
 - [ ] Q2_2026_SPRING_WFH collection published (5–7 home office picks)
 - [ ] Lead magnet PDF: "Canadian WFH Setup Guide — Spring 2026"
 - [ ] FB ad campaign ($5–$10/day CAD)
-- [ ] Ad → landing page → email capture → ConvertKit sequence
+- [ ] Ad → landing page → email capture → MailerLite sequence
 - [ ] Weekly click analysis — kill low performers, double down on winners
 - [ ] Enrich Product schema (brand, image, sku, url, description) — from Multi-LLM Research
 - [ ] Ensure visible HTML is structured for AI parsing (not just JSON-LD) — from Multi-LLM Research

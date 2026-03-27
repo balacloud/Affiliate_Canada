@@ -6,6 +6,7 @@
 ## User
 
 ## Feedback
+- [feedback_email_platform.md](feedback_email_platform.md) — Use MailerLite not ConvertKit (cost reason)
 
 ## Reference
 - [reference_port_assignments.md](reference_port_assignments.md) — Port assignments across all projects (avoid conflicts)
