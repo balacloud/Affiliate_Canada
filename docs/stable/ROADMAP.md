@@ -20,11 +20,12 @@
   - [ ] Newegg Canada
   - [ ] Amazon.ca Associates
   - [ ] MaxBounty (requires phone interview — apply ASAP)
-- [ ] Sign up for **MailerLite** (not ConvertKit — too costly) — free up to 1,000 subscribers
+- [x] Sign up for **Kit (ConvertKit)** — free tier (up to 1,000 subscribers) — Day 3
+  - [ ] Set up Zoho Mail → `hello@smartshopca.ca` (free, ~15 min)
   - [ ] Create form: "SmartShopCA Spring 2026 Deals"
-  - [ ] Get API key and Group/Form ID
+  - [ ] Get API key and Form ID
   - [ ] Create 5-email welcome sequence (see Email Onboarding in Multi-LLM Research)
-- [ ] Provide MailerLite API key + Form ID to Claude Code
+- [ ] Provide Kit API key + Form ID to Claude Code
 - [ ] Set up Google Search Console (verify via Vercel DNS)
 - [ ] Set up affiliate tracking spreadsheet
 

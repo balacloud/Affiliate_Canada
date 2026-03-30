@@ -1,6 +1,6 @@
 # SmartShopCA.ca — Master Session Guide
 
-> **Last Updated:** 2026-03-27 (Day 2 close — MailerLite decision, logo plan, next steps locked)
+> **Last Updated:** 2026-03-30 (Day 3 close — Kit/ConvertKit confirmed, business email strategy, no code changes)
 > **Current Version:** v0.1.1 (research + audit framework added)
 > **Active Campaign:** Q2_2026_SPRING
 
@@ -90,7 +90,7 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Seed content | DONE | 5 products + 1 collection in /content/ |
 | Build | PASSING | `next build` — 11 pages generated, 0 errors |
 | Vercel deploy | DONE | www.smartshopca.ca — Production, auto-deploys from main |
-| ConvertKit | NOT STARTED | EmailCapture has placeholder — needs API key (blocked on user) |
+| Kit (ConvertKit) | PARTIAL | Signed up (free tier) — EmailCapture placeholder needs API key + Form ID (blocked on user) |
 | Affiliate accounts | NOT STARTED | Product links are placeholders (blocked on user) |
 | Google Search Console | NOT STARTED | Needs Vercel DNS verification (blocked on user) |
 
@@ -102,7 +102,7 @@ Email is the spine. SEO and AI search citations build on top over time.
 
 | ID | Severity | Description |
 |:--|:--|:--|
-| KI-003 | MEDIUM | No MailerLite account — EmailCapture is placeholder (ConvertKit rejected — too costly) |
+| KI-003 | MEDIUM | Kit (ConvertKit) signed up — EmailCapture still placeholder, needs API key + Form ID (blocked on user) |
 | KI-004 | LOW | Affiliate accounts not yet applied — product links are placeholders (blocked on user) |
 | KI-005 | LOW | Google Search Console not set up (blocked on user) |
 | KI-007 | LOW | Seed product images are empty — no product photos yet |
@@ -114,7 +114,9 @@ Email is the spine. SEO and AI search citations build on top over time.
 
 **Resolved Day 1:** KI-001 (git repo), KI-002 (Vercel deployed), KI-006 (.gitignore)
 
-**Summary:** 0 CRITICAL, 2 HIGH, 2 MEDIUM, 5 LOW (9 total)
+**New Day 3:** KI-013 (LOW) — No business email set up (`hello@smartshopca.ca` via Zoho Mail, blocked on user)
+
+**Summary:** 0 CRITICAL, 2 HIGH, 2 MEDIUM, 6 LOW (10 total)
 
 ---
 
@@ -125,10 +127,11 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Day 0 | 2026-03-25 | Project setup: consolidated plan, adopted docs structure from options-iq |
 | Day 1 | 2026-03-25 | Full scaffold: git init, Next.js 14, 8 components, 4 pages, API route, 5 seed products + 1 collection. Build passing. GitHub pushed, Vercel deployed, DNS configured — www.smartshopca.ca live. |
 | Day 2 | 2026-03-26 | Multi-LLM Research reviewed + synthesized. Master Audit Framework created (8 categories). Golden Rules updated with 3 new research-backed rules (R22-R24). Roadmap updated with research findings + new Phase 1/2 items. Decided: MailerLite over ConvertKit (cost). Text-based SVG logo planned for Day 3. |
+| Day 3 | 2026-03-30 | Planning/strategy day. Kit (ConvertKit) free tier signed up — replaces MailerLite decision. Business email strategy decided: Zoho Mail free tier for `hello@smartshopca.ca`. No code changes. |
 
 ---
 
-## Next Session Priorities (Day 3)
+## Next Session Priorities (Day 4)
 
 > See `docs/stable/ROADMAP.md` → Phase 1 items.
 
@@ -137,11 +140,12 @@ Email is the spine. SEO and AI search citations build on top over time.
 - **P1:** Enrich Product schema (brand, image, sku, url, description) — KI-009 HIGH
 - **P1:** Structure visible HTML for AI parsing — KI-010 HIGH
 - **P1:** Add author attribution to content pages (E-E-A-T) — KI-011
-- **P1:** Create /privacy page (PIPEDA requirement) — KI-012
+- **P1:** Create /privacy page with `hello@smartshopca.ca` contact (KI-012)
 - **P2:** Build MDX content loading for guides — KI-008
 - **P2:** Add deals/[slug] individual product pages
 
 **Blocked on user (do in parallel):**
-- Sign up for MailerLite → share API key + form ID → wire EmailCapture — KI-003
+- Set up Zoho Mail → get `hello@smartshopca.ca` (~15 min) — KI-013
+- Share Kit (ConvertKit) API key + Form ID → wire EmailCapture — KI-003
 - Apply for affiliate programs (Best Buy CA via Impact, Newegg, Amazon.ca, MaxBounty) — KI-004
 - Set up Google Search Console — KI-005

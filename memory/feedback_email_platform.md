@@ -1,11 +1,11 @@
 ---
-name: Email Platform Choice — MailerLite over ConvertKit
-description: User rejected ConvertKit as too costly; MailerLite chosen as the email platform
+name: Email Platform Choice — Kit (ConvertKit)
+description: Kit (ConvertKit) free tier chosen as email platform after user signed up; free up to 1,000 subscribers
 type: feedback
 ---
 
-Use **MailerLite** as the email platform, not ConvertKit.
+Use **Kit (ConvertKit)** as the email platform for SmartShopCA.
 
-**Why:** User found ConvertKit too expensive (paid starts at ~$25 USD/month for sequences). MailerLite is free up to 1,000 subscribers with full automation — enough for Phase 1 KPI of 200 subscribers.
+**Why:** User signed up for Kit (ConvertKit) free tier on Day 3 (2026-03-30). Free tier covers up to 1,000 subscribers — sufficient for Phase 1 KPI of 200 subscribers. The original Day 2 rejection of ConvertKit was based on paid plan pricing (~$25 USD/month); the free tier resolves that concern entirely.
 
-**How to apply:** Any reference to ConvertKit in code, docs, or new components should be replaced with MailerLite. When wiring up EmailCapture, use MailerLite API. When suggesting email tools in any context, default to MailerLite for this project.
+**How to apply:** Wire EmailCapture component to Kit API once user provides API key + Form ID. Any reference to MailerLite in code or docs should be updated to Kit. When wiring up email integrations, use Kit (ConvertKit) API.
