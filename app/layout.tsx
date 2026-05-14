@@ -56,6 +56,9 @@ export default function RootLayout({
               <Link href="/about" className="hover:text-slate-600">
                 About
               </Link>
+              <Link href="/privacy" className="hover:text-slate-600">
+                Privacy
+              </Link>
               <span>&copy; {new Date().getFullYear()} SmartShopCA.ca</span>
             </div>
           </div>

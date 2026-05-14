@@ -1,12 +1,20 @@
 # SmartShopCA.ca — Master Session Guide
 
-> **Last Updated:** 2026-03-30 (Day 3 close — Kit/ConvertKit confirmed, business email strategy, no code changes)
-> **Current Version:** v0.1.1 (research + audit framework added)
+> **Last Updated:** 2026-05-14 (Day 5 close — privacy page shipped and compliance gap reduced)
+> **Current Version:** v0.1.3 (privacy page + footer navigation update)
 > **Active Campaign:** Q2_2026_SPRING
 
 ---
 
 ## Session Startup Checklist
+
+This file remains the primary session-state document for the project.
+
+Agent note:
+
+- keep the filename `CLAUDE_CONTEXT.md` for continuity
+- use it as the canonical session guide even when the active coding agent is Codex
+- also read `docs/stable/SESSION_START_CHECKLIST.md` for the current neutral startup flow
 
 Every session MUST follow this order:
 
@@ -15,8 +23,9 @@ Every session MUST follow this order:
 3. Read `docs/stable/ROADMAP.md` — phase status, done vs pending
 4. Read `docs/status/PROJECT_STATUS_DAY{latest}_SHORT.md` — last session summary (check Session Log below for latest day number)
 5. Read `docs/versioned/KNOWN_ISSUES_DAY{latest}.md` — open issues (same day number as step 4)
-6. Read `docs/stable/TECH_SPEC.md` — only if touching components, data models, or API
-7. Read `PLAN.md` — only if you need the full consolidated vision/spec (e.g., first scaffold session)
+6. Read `docs/Research/Codex_Transition_Handoff.md` — transition reference for implementation reality vs docs
+7. Read `docs/stable/TECH_SPEC.md` — only if touching components, data models, or API
+8. Read `PLAN.md` — only if you need the full consolidated vision/spec (e.g., first scaffold session)
 
 After reading, state: current version, current day's top priority, any blockers.
 Then ask: "What would you like to focus on today?"
@@ -78,17 +87,17 @@ Email is the spine. SEO and AI search citations build on top over time.
 
 | Area | Status | Notes |
 |:--|:--|:--|
-| Domain | smartshopca.ca registered | Needs Vercel connection |
+| Domain | smartshopca.ca registered | Live on Vercel |
 | Documentation | DONE | CLAUDE.md, CLAUDE_CONTEXT.md, README.md, all docs/ files |
 | Git repo | DONE | Initialized, .gitignore in place |
 | Next.js project | DONE | Next.js 14.2, App Router, TypeScript, Tailwind CSS |
 | TypeScript interfaces | DONE | types/index.ts — Product, Merchant, Collection, ClickEvent, FAQ, Campaign |
 | Components | DONE (8/8) | DealCard, OutboundLink, JsonLd, SeasonBanner, CollectionGrid, ComparisonTable, FAQBlock, EmailCapture |
-| Pages | DONE (4/4) | Homepage, Season, Guide, About |
+| Pages | DONE (5/5) | Homepage, Season, Guide, About, Privacy |
 | API routes | DONE | /api/track-click — logs clicks, returns { success: true } |
 | Campaign config | DONE | config/campaigns.ts — 4 seasons, ACTIVE_CAMPAIGN = Q2_2026_SPRING |
 | Seed content | DONE | 5 products + 1 collection in /content/ |
-| Build | PASSING | `next build` — 11 pages generated, 0 errors |
+| Build | PASSING | `next build` — 12 pages generated, 0 errors |
 | Vercel deploy | DONE | www.smartshopca.ca — Production, auto-deploys from main |
 | Kit (ConvertKit) | PARTIAL | Signed up (free tier) — EmailCapture placeholder needs API key + Form ID (blocked on user) |
 | Affiliate accounts | NOT STARTED | Product links are placeholders (blocked on user) |
@@ -98,7 +107,7 @@ Email is the spine. SEO and AI search citations build on top over time.
 
 ## Known Issues
 
-> Full details: `docs/versioned/KNOWN_ISSUES_DAY2.md`
+> Full details: `docs/versioned/KNOWN_ISSUES_DAY5.md`
 
 | ID | Severity | Description |
 |:--|:--|:--|
@@ -110,13 +119,13 @@ Email is the spine. SEO and AI search citations build on top over time.
 | KI-009 | HIGH | Product schema basic (name+price) — needs brand, image, sku, url, description |
 | KI-010 | HIGH | Visible HTML not optimized for AI parsing — needs structured elements |
 | KI-011 | MEDIUM | No author attribution on content pages (E-E-A-T) |
-| KI-012 | LOW | No privacy policy page (PIPEDA requirement) |
 
 **Resolved Day 1:** KI-001 (git repo), KI-002 (Vercel deployed), KI-006 (.gitignore)
+**Resolved Day 5:** KI-012 (`/privacy` page implemented and linked in footer)
 
 **New Day 3:** KI-013 (LOW) — No business email set up (`hello@smartshopca.ca` via Zoho Mail, blocked on user)
 
-**Summary:** 0 CRITICAL, 2 HIGH, 2 MEDIUM, 6 LOW (10 total)
+**Summary:** 0 CRITICAL, 2 HIGH, 2 MEDIUM, 5 LOW (9 total)
 
 ---
 
@@ -128,21 +137,22 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Day 1 | 2026-03-25 | Full scaffold: git init, Next.js 14, 8 components, 4 pages, API route, 5 seed products + 1 collection. Build passing. GitHub pushed, Vercel deployed, DNS configured — www.smartshopca.ca live. |
 | Day 2 | 2026-03-26 | Multi-LLM Research reviewed + synthesized. Master Audit Framework created (8 categories). Golden Rules updated with 3 new research-backed rules (R22-R24). Roadmap updated with research findings + new Phase 1/2 items. Decided: MailerLite over ConvertKit (cost). Text-based SVG logo planned for Day 3. |
 | Day 3 | 2026-03-30 | Planning/strategy day. Kit (ConvertKit) free tier signed up — replaces MailerLite decision. Business email strategy decided: Zoho Mail free tier for `hello@smartshopca.ca`. No code changes. |
+| Day 4 | 2026-05-09 | Codex reviewed the repo, verified build/runtime structure, documented implementation-vs-doc drift, added a formal transition handoff, added a neutral session-start checklist, and documented the niche thesis. No product code changes. |
+| Day 5 | 2026-05-14 | Implemented `/privacy`, linked it from the global footer, verified the build still passes, and closed KI-012. |
 
 ---
 
-## Next Session Priorities (Day 4)
+## Next Session Priorities (Day 6)
 
 > See `docs/stable/ROADMAP.md` → Phase 1 items.
 
-**Claude Code tasks (no user input needed):**
-- **P1:** Build text-based SVG logo component
+**Implementation tasks (no user input needed):**
+- **P1:** Add author attribution and methodology blocks to content pages (KI-011)
+- **P1:** Build MDX content loading for guides (KI-008)
+- **P1:** Add `deals/[slug]` individual product pages
 - **P1:** Enrich Product schema (brand, image, sku, url, description) — KI-009 HIGH
 - **P1:** Structure visible HTML for AI parsing — KI-010 HIGH
-- **P1:** Add author attribution to content pages (E-E-A-T) — KI-011
-- **P1:** Create /privacy page with `hello@smartshopca.ca` contact (KI-012)
-- **P2:** Build MDX content loading for guides — KI-008
-- **P2:** Add deals/[slug] individual product pages
+- **P2:** Build text-based SVG logo component
 
 **Blocked on user (do in parallel):**
 - Set up Zoho Mail → get `hello@smartshopca.ca` (~15 min) — KI-013

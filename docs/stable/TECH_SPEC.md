@@ -12,6 +12,7 @@ smartshopca/
 │   ├── guides/[slug]/page.tsx      # Evergreen buying guides
 │   ├── deals/[slug]/page.tsx       # Individual product pages
 │   ├── about/page.tsx              # Trust/about page
+│   ├── privacy/page.tsx            # Privacy policy page
 │   └── api/
 │       └── track-click/route.ts    # Outbound click logger
 ├── components/
@@ -236,6 +237,11 @@ export const campaigns = {
 - How products are selected (editorial criteria, not paid placement)
 - Affiliate disclosure statement (legally required in Canada)
 - Last updated date
+
+### Privacy Page `/privacy`
+- Privacy policy covering email signup, analytics, and affiliate click tracking
+- Contact address for privacy questions
+- Linked from the global footer on every page
 
 ---
 

@@ -1,7 +1,7 @@
 # Roadmap — SmartShopCA.ca
 
-> **Current Phase:** Phase 0 (Build Core)
-> **Current Version:** v0.1.0
+> **Current Phase:** Phase 0 complete → entering Phase 1
+> **Current Version:** v0.1.3
 
 ---
 
@@ -14,7 +14,7 @@
 - [x] Register domain — smartshopca.ca (C$15.99/year)
 - [x] Consolidated plan document created (PLAN.md)
 - [x] Documentation structure adopted (docs/, memory/, CLAUDE.md, CLAUDE_CONTEXT.md)
-- [ ] Create Vercel account → connect to GitHub repo → deploy
+- [x] Create Vercel account → connect to GitHub repo → deploy
 - [ ] Apply for affiliate programs:
   - [ ] Best Buy Canada
   - [ ] Newegg Canada
@@ -25,7 +25,7 @@
   - [ ] Create form: "SmartShopCA Spring 2026 Deals"
   - [ ] Get API key and Form ID
   - [ ] Create 5-email welcome sequence (see Email Onboarding in Multi-LLM Research)
-- [ ] Provide Kit API key + Form ID to Claude Code
+- [ ] Provide Kit API key + Form ID to implementation agent
 - [ ] Set up Google Search Console (verify via Vercel DNS)
 - [ ] Set up affiliate tracking spreadsheet
 
@@ -60,10 +60,11 @@
 
 **Goal:** First real campaign live, first emails collected, first affiliate clicks tracked.
 
+- [x] Privacy policy page published at `/privacy` with footer link
 - [ ] Q2_2026_SPRING_WFH collection published (5–7 home office picks)
 - [ ] Lead magnet PDF: "Canadian WFH Setup Guide — Spring 2026"
 - [ ] FB ad campaign ($5–$10/day CAD)
-- [ ] Ad → landing page → email capture → MailerLite sequence
+- [ ] Ad → landing page → email capture → Kit sequence
 - [ ] Weekly click analysis — kill low performers, double down on winners
 - [ ] Enrich Product schema (brand, image, sku, url, description) — from Multi-LLM Research
 - [ ] Ensure visible HTML is structured for AI parsing (not just JSON-LD) — from Multi-LLM Research
@@ -188,3 +189,5 @@ This is documented as a conscious trade-off, not an oversight.
 | v0.0.0 | 2026-03-25 | Project setup, docs structure adopted |
 | v0.1.0 | 2026-03-25 | Full scaffold: Next.js 14, 8 components, 4 pages, API route, 5 seed products, build passing |
 | v0.1.1 | 2026-03-26 | Multi-LLM Research synthesis, Master Audit Framework (8 categories), Golden Rules R22-R24 added |
+| v0.1.2 | 2026-05-09 | Codex transition documented, startup workflow neutralized, niche thesis added, stale roadmap wording corrected |
+| v0.1.3 | 2026-05-14 | Privacy policy page added, footer updated, KI-012 resolved |
