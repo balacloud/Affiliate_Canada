@@ -1,20 +1,17 @@
 ---
 name: SmartShopCA Project Overview
-description: Core project context — what SmartShopCA.ca is, current phase, and key decisions
+description: Core project context and Day 8 implementation boundaries
 type: project
 ---
 
-SmartShopCA.ca is a Canada-specific seasonal affiliate deals site for the Canadian WFH/home-office niche. Decision helper, not deal spam. 3–7 curated picks per scenario.
+SmartShopCA is one Canada-first product-discovery/affiliate brand with two visibly distinct pillars: Seasonal Canadian favourites and Canadian-made personal care & household. Skincare launches first; face/body moisturizers are separate comparisons. Household comes later with separate methods. Community listening first; interviews optional. Founder Balaji Kothandaraman, Kitchener, father of two, 18+ years technical delivery/data-integrity background; no medical expertise inferred. Capacity roughly 14 hours/week, bootstrap.
 
-**Why:** Diversified affiliate revenue ($2K CAD/month target) via email-first growth, not SEO-dependent.
+The initial two-pillar Next.js 14.2.35 app is implemented locally: `/seasonal`, `/care`, `/care/skincare`, separate comparisons, About/methodology/privacy and archived legacy URLs. Four product candidates remain held; no complete safety review or active affiliate participation. Email disabled/unconnected and inbox unconfirmed. No durable analytics/commission reporting. A supported framework upgrade is pending.
 
-**How to apply:** Every build decision should prioritize: email capture, affiliate link transparency, JSON-LD schema, and the "less choice" behavioral design principle. Amazon.ca is always secondary. The documentation structure mirrors the options-iq project pattern (CLAUDE.md → CLAUDE_CONTEXT.md → docs/stable + Research + status + versioned).
+Claude's later UX round 2 is separately verified but NOT integrated. Exact resume task/archive in `../docs/status/PROJECT_STATUS_DAY8_SHORT.md`: integrate R2, move Key differences above cards, include all 26 tests and verify merged app. Current root build/14 tests pass; R2 26 tests/52 browser states are isolated results. No push/deployment. October 15 public check still showed old home-office homepage.
 
-Current phase: Phase 0 complete → entering Phase 1. Site is live at www.smartshopca.ca (Next.js 14, Vercel, v0.1.1).
+Use `../docs/stable/PERSONA_ROUTER.md` for one lead plus affected review lenses, not six agents. New Claude Design handoffs belong under `../docs/Claude_Design_Handoff/` in dated task subfolders. Preserve original returned files.
 
-**Key platform decisions:**
-- Email: MailerLite (not ConvertKit — too expensive for Day 0). Free up to 1,000 subs, good automation.
-- Logo: Text-based SVG component first (can swap to designed logo later, no code changes needed).
-- Stack: Next.js 14 (kept over Wix/Squarespace — developer has code ownership goals).
+Domain registrar/DNS recorded as GoDaddy; source GitHub balacloud/Affiliate_Canada; production Vercel. Actual account plan and GitHub visibility not checked/changed. Vercel Pro is the low-migration recommendation, not an approved purchase. Kit remains intended ESP. Founder wants eventual transferability/exit; B2B product-evidence service is exploratory, not a pivot or approved build. Data quality, customer usefulness, attributable revenue and founder labour must be measured.
 
-**Blocked on user:** Apply for affiliate programs (Best Buy CA, Newegg, Amazon.ca, MaxBounty), sign up for MailerLite and share API key + form ID.
+When research cannot complete, provide an outside-LLM prompt and verify returned evidence (Golden Rule 28). Never mix Canadian ownership with exact-product manufacturing or give absolute safety guarantees. Respect current AGENTS.md authorization and preserve unrelated working-tree changes.

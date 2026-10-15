@@ -1,11 +1,50 @@
 # Roadmap — SmartShopCA.ca
 
-> **Current Phase:** Phase 0 complete → entering Phase 1
-> **Current Version:** v0.1.3
+> **Current Phase:** Product architecture reconciliation and launch readiness
+> **Current Version:** Day 8 local checkpoint; initial redesign saved locally, Claude UX round 2 verified but not integrated; no production release
 
 ---
 
-## Phase 0 — Build Core (Now → Week 2)
+## October 2026 Direction Reset
+
+**Day 8 close — 2026-10-15:** Initial app build and 14 tests pass. UX round 2 passes build/26 tests/52 browser states in isolation, including the two previous fragment-navigation failures. No production changes. See `docs/status/PROJECT_STATUS_DAY8_SHORT.md`.
+
+- [x] Establish six working lenses and automatic task/persona routing in repository instructions
+- [x] Establish dedicated dated Claude Design handoff folders and preserve returned artifacts
+- [x] Independently verify Claude UX revision R2
+- [ ] **Next:** integrate R2, move Key differences above product cards, include new tests in normal script and verify merged app
+- [ ] Upgrade Next.js to a supported patched release as a separate verified change
+- [ ] Resolve product-evidence/contact/email and crawler/canonical launch blockers before release
+
+**Local integration — 2026-10-14:** Claude design/code imported and checked. Nine editorial pages and legacy archive states now work locally; build, 14 tests and 27 browser route/viewport checks passed. Email/contact/affiliates remain unconnected or unconfirmed; products remain research holds. No push or deployment. See `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_2026-10-14.md`.
+
+**Initial skincare scope — 2026-10-14:** both face and body moisturizers selected, with separate comparisons. No face-versus-body selection gate remains. See `docs/Research/SKINCARE_LAUNCH_READINESS_2026-10-14.md` for evidence, trust, integration and QA gaps before launch; seasonal remains a separate future pillar.
+
+**First category — 2026-10-14:** skincare selected within Canadian-made personal care and household products. Face and body moisturizers are selected; next validate buyer questions and complete evidence; household categories follow only after separate validation. Reusable product research skill created; scheduled monitoring is not configured.
+
+**Launch selection — 2026-10-14:** Canadian-made personal care and household products will be the first pillar. Select one category and buyer group, define evidence criteria, prepare a small comparison, repair website launch blockers, and test with actual buyers. Budget and timing remain pending. Seasonal favourites remains a distinct future pillar; older seasonal-first sequencing is superseded.
+
+SmartShopCA is one Canada-first, multi-affiliate discovery brand with two separate initial pillars: seasonal Canadian favourites and Canadian-made personal care and household products. The second pillar's expanded scope was approved on 2026-10-14; validation starts with skincare, using separate face and body moisturizer comparisons. The older roadmap below records the original home-office scaffold and remains useful implementation history, but it is no longer the complete product direction.
+
+- [x] Add repository-level `AGENTS.md` for Codex and compatible agents
+- [x] Add repository-local SmartShopCA session skill
+- [x] Document multi-pillar brand architecture and health-adjacent content boundaries
+- [x] Implement shared homepage/navigation with separate `/seasonal` and `/care` pillars and `/care/skincare` categories (local handoff integration, 2026-10-14)
+- [x] Add editorial models for pillar/readiness and sourced skincare candidates; retain legacy models separately
+- [ ] Decide which legacy home-office content belongs in seasonal favourites
+- [ ] Convert the skincare prototype into sourced, production-ready application content
+- [x] Remove stale commerce from local homepage/legacy routes; legacy URLs now show archive notices (live deployment pending)
+- [x] Add 14 passing editorial purchase-gate/outbound-contract tests
+- [ ] Configure non-interactive lint and broader content validation
+- [ ] Reconcile local, GitHub, Vercel, and canonical documentation state
+
+---
+
+## Historical seasonal-first plan (superseded sequencing)
+
+The phases below preserve the original campaign plan and research claims; they are not the current launch schedule. The October direction reset and latest canonical context govern current work.
+
+## Phase 0 — Build Core (original Weeks 1–2)
 
 **Goal:** Site scaffolded, deployed, affiliate accounts applied.
 
@@ -29,7 +68,7 @@
 - [ ] Set up Google Search Console (verify via Vercel DNS)
 - [ ] Set up affiliate tracking spreadsheet
 
-### Claude Code Tasks
+### Implementation Agent Tasks
 
 - [x] Initialize git repo + .gitignore (Day 1)
 - [x] Scaffold Next.js 14 project (App Router, TypeScript, Tailwind CSS) (Day 1)
@@ -191,3 +230,5 @@ This is documented as a conscious trade-off, not an oversight.
 | v0.1.1 | 2026-03-26 | Multi-LLM Research synthesis, Master Audit Framework (8 categories), Golden Rules R22-R24 added |
 | v0.1.2 | 2026-05-09 | Codex transition documented, startup workflow neutralized, niche thesis added, stale roadmap wording corrected |
 | v0.1.3 | 2026-05-14 | Privacy policy page added, footer updated, KI-012 resolved |
+| v0.1.4 | 2026-10-09 | Codex-native governance and multi-pillar SmartShopCA direction documented |
+| Day 8 checkpoint | 2026-10-15 | Initial two-pillar app saved locally; R2 UX verified but not integrated; no new release tag or deployment |

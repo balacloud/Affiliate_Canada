@@ -31,8 +31,8 @@
 
 ## Process Rules
 
-17. **Session startup checklist** — Always read CLAUDE_CONTEXT.md first. No exceptions.
-18. **Session close checklist** — Always update: CLAUDE_CONTEXT.md, status file, known issues file, ROADMAP.md.
+17. **Session startup checklist** — Use the repository instructions and session workflow; load additional documents according to the task.
+18. **Session close checklist** — Update only the canonical state, status, issue, roadmap, spec, rule, and memory documents affected by the work.
 19. **Research decisions are documented** — Any non-obvious decision gets a doc in `docs/Research/` with: Question → Decision → Why → Why not alternatives.
 20. **No fabricated data** — Prices must be real and verified. Products must be in stock in Canada. No fake availability.
 21. **Pre-publish checklist before every page goes live** — All 30 points in `docs/stable/PRE_PUBLISH_CHECKLIST.md` must be checked.
@@ -44,6 +44,13 @@
 22. **E-E-A-T signals on every content page** — Author attribution, transparent methodology ("How We Picked"), trust indicators. Required by Google and AI answer engines for citation eligibility.
 23. **Product schema must be enriched** — Every Product JSON-LD needs: brand, image, sku, url, description, and full Offer object. Basic name+price is insufficient for rich results.
 24. **Visible HTML is as important as JSON-LD** — AI chatbots (ChatGPT, Claude, Perplexity) read visible page content, not schema markup. Structure content for both machines and humans.
+25. **Keep editorial pillars distinct** — Seasonal favourites and clean skincare may share infrastructure, but never mix unrelated recommendations into one contextless product feed.
+26. **Health-adjacent claims require evidence and restraint** — Skincare ingredient claims need traceable sources, a declared methodology, uncertainty, and a review date. Do not provide medical advice or make unsupported absolute safety claims.
+27. **Define what “Canadian” means** — State whether a claim refers to ownership, headquarters, manufacturing, formulation, ingredients, or availability; never treat them as equivalent.
+
+## Founder Research Workflow (2026-10-14)
+
+28. **Provide an outside-LLM prompt when research cannot be completed here** — Explain the specific evidence or access gap and give the founder a ready-to-copy, self-contained research prompt to run in an outside LLM and bring back. Include the decision being researched, relevant SmartShopCA context, precise questions, Canadian scope, primary-source requirements, dates, uncertainty labels, and a useful output format. Complete what can be researched here; do not shift available work to the founder unnecessarily. When results return, preserve source/model attribution, check material claims and citations, reconcile conflicts, and distinguish findings from assumptions. Outside-LLM output and cross-model agreement are not market validation. This is the founder's explicit workflow preference.
 
 ---
 

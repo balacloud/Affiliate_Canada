@@ -1,171 +1,86 @@
-import type { Metadata } from "next";
-import JsonLd from "@/components/JsonLd";
+import type { Metadata } from 'next';
+import { integrations } from '@/config/site';
+import { Breadcrumbs } from '@/components/editorial/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | SmartShopCA",
-  description:
-    "Privacy Policy for SmartShopCA.ca, including how we collect, use, and protect personal information for Canadian visitors.",
+  title: 'Privacy',
+  description: 'What information SmartShopCA collects today, and what it does not.',
+  alternates: { canonical: '/privacy' },
 };
 
-const privacySchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Privacy Policy",
-  description:
-    "Privacy Policy for SmartShopCA.ca, including email signup, analytics, and affiliate-link tracking disclosures.",
-  url: "https://smartshopca.ca/privacy",
-};
-
+/**
+ * Describes only the data flows that exist in this codebase. Update this page
+ * in the same change that adds any new collection (email provider, analytics,
+ * contact form).
+ */
 export default function PrivacyPage() {
   return (
-    <>
-      <JsonLd schema={privacySchema} />
+    <div className="container-page pb-20 pt-10">
+      <div className="flex max-w-[48rem] flex-col gap-10">
+        <div className="flex flex-col gap-4">
+          <Breadcrumbs className="text-ink-muted" items={[{ label: 'Home', href: '/' }, { label: 'Privacy' }]} />
+          <h1 className="heading-display text-[34px] sm:text-[46px]">Privacy</h1>
+          <p className="text-[19px] text-ink-body">
+            SmartShopCA is an editorial buying guide for Canadian readers. This page explains what information the site
+            handles today.
+          </p>
+        </div>
 
-      <h1 className="mb-6 text-3xl font-bold text-primary">Privacy Policy</h1>
-
-      <div className="space-y-8 text-slate-600">
-        <section className="rounded-lg border-l-4 border-primary bg-slate-50 p-5">
-          <h2 className="mb-2 text-lg font-bold text-primary">Summary</h2>
-          <ul className="list-inside list-disc space-y-1 text-sm">
-            <li>
-              We collect limited information needed to run a content and email
-              signup website for Canadians.
-            </li>
-            <li>
-              We may collect analytics data, affiliate click data, and email
-              signup details you choose to submit.
-            </li>
-            <li>
-              We do not sell your personal information to third parties.
-            </li>
-          </ul>
+        <section aria-labelledby="email" className="flex flex-col gap-3">
+          <h2 id="email" className="heading-display text-[26px]">
+            Email sign-up
+          </h2>
+          {integrations.email.configured ? (
+            <p className="text-ink-body">
+              If you subscribe, we keep your email address and the topic you chose so we can send the updates you asked
+              for. You can unsubscribe from any email.
+            </p>
+          ) : (
+            <p className="text-ink-body">
+              Email updates are not switched on yet. The sign-up form is shown in a disabled state, and nothing typed
+              into it is sent or stored.
+            </p>
+          )}
         </section>
 
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">
-            Who We Are
+        <section aria-labelledby="links" className="flex flex-col gap-3">
+          <h2 id="links" className="heading-display text-[26px]">
+            Links to merchants
           </h2>
-          <p>
-            SmartShopCA.ca is a Canadian seasonal deals and buying guide site
-            focused on helping Canadians make better purchase decisions for home
-            office and remote work products.
+          <p className="text-ink-body">
+            When you select a merchant link, the site may record which product and merchant link was selected and when.
+            This record does not include your name or email address. Evidence and source links are not recorded. Once
+            you leave SmartShopCA, the merchant&rsquo;s own privacy policy applies.
           </p>
         </section>
 
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">
-            Information We Collect
+        <section aria-labelledby="other" className="flex flex-col gap-3">
+          <h2 id="other" className="heading-display text-[26px]">
+            Other information
           </h2>
-          <p>We may collect the following categories of information:</p>
-          <ul className="mt-2 list-inside list-disc space-y-1">
-            <li>
-              Contact information you submit voluntarily, such as your email
-              address when signing up for updates or a newsletter
-            </li>
-            <li>
-              Basic usage and analytics information, such as page visits,
-              device/browser type, and referral sources
-            </li>
-            <li>
-              Affiliate click-tracking information, such as which outbound link
-              was clicked and from which page
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">
-            How We Use Information
-          </h2>
-          <p>We use collected information to:</p>
-          <ul className="mt-2 list-inside list-disc space-y-1">
-            <li>Operate and improve the website</li>
-            <li>Measure which guides, products, and campaigns perform best</li>
-            <li>
-              Send email updates or promotions if you choose to subscribe
-            </li>
-            <li>Maintain basic site security and prevent abuse</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">
-            Email Signup
-          </h2>
-          <p>
-            If you subscribe to our email list, your information may be stored
-            and processed by our email service provider, Kit (formerly
-            ConvertKit), once that integration is live. You can unsubscribe at
-            any time using the unsubscribe link included in marketing emails.
+          <p className="text-ink-body">
+            SmartShopCA does not use advertising trackers, does not sell personal information, and does not run a
+            contact form. Like most websites, the service that hosts the site may keep standard technical logs, such as
+            IP addresses and request times, for security and reliability.
           </p>
         </section>
 
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">
-            Analytics and Tracking
+        <section aria-labelledby="contact" className="flex flex-col gap-3">
+          <h2 id="contact" className="heading-display text-[26px]">
+            Questions
           </h2>
-          <p>
-            We may use analytics tools and internal click tracking to understand
-            how visitors use SmartShopCA.ca. This includes measuring visits,
-            popular pages, and clicks on affiliate links so we can improve the
-            usefulness of the site.
-          </p>
+          {integrations.contact.confirmed ? (
+            <p className="text-ink-body">
+              Privacy questions: <a href={`mailto:${integrations.contact.address}`}>{integrations.contact.address}</a>
+            </p>
+          ) : (
+            <p className="text-ink-body">
+              A privacy contact address will be listed here once it is set up and monitored.
+            </p>
+          )}
+          <p className="text-sm text-ink-muted">Last updated October 14, 2026.</p>
         </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">
-            Affiliate Links
-          </h2>
-          <p>
-            SmartShopCA.ca contains affiliate links. When you click an outbound
-            merchant link, we may log that click for performance tracking. If
-            you make a purchase through an affiliate link, we may earn a
-            commission at no extra cost to you.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">
-            Data Sharing
-          </h2>
-          <p>
-            We do not sell your personal information. We may share limited data
-            with service providers that help us operate the site, such as
-            hosting, analytics, email delivery, or affiliate-network reporting.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">
-            Your Choices
-          </h2>
-          <ul className="list-inside list-disc space-y-1">
-            <li>You can choose not to submit your email address.</li>
-            <li>You can unsubscribe from marketing emails at any time.</li>
-            <li>
-              You can contact us to request updates or deletion of information
-              you previously submitted, subject to legal or operational
-              requirements.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-bold text-primary">Contact</h2>
-          <p>
-            For privacy questions, contact{" "}
-            <a
-              href="mailto:hello@smartshopca.ca"
-              className="font-medium text-primary underline underline-offset-2"
-            >
-              hello@smartshopca.ca
-            </a>
-            .
-          </p>
-        </section>
-
-        <p className="text-xs text-slate-400">Last updated: May 11, 2026</p>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,73 +1,135 @@
-import Link from "next/link";
-import SeasonBanner from "@/components/SeasonBanner";
-import EmailCapture from "@/components/EmailCapture";
-import JsonLd from "@/components/JsonLd";
+import Link from 'next/link';
+import { founder, integrations, pillarOrder, pillars } from '@/config/site';
+import { skincareComparisons } from '@/content/skincare';
+import { formatCad, formatDate } from '@/lib/format';
+import { PillarPanel } from '@/components/editorial/PillarPanel';
+import { EmailSignup } from '@/components/EmailSignup';
 
-const scenarios = [
+const commitments = [
   {
-    title: "Student Setup",
-    description:
-      "Budget-friendly monitor, webcam, and headset combos for Canadian students heading back to school.",
-    href: "/q2-spring-2026",
-    emoji: "📚",
+    title: 'Small shortlists',
+    body: "Two to seven options for one clear need. We don't pad a list to look complete.",
+    tone: 'text-rust',
   },
   {
-    title: "Remote Worker",
-    description:
-      "Ergonomic chairs, quality monitors, and lighting that make 8-hour days comfortable from home in Canada.",
-    href: "/q2-spring-2026",
-    emoji: "💻",
+    title: 'Origin, stated precisely',
+    body: 'Canadian-made, Canadian-owned and available in Canada are different labels. Unconfirmed stays unconfirmed.',
+    tone: 'text-rust',
   },
   {
-    title: "Upgrade My Desk",
-    description:
-      "Premium picks for Canadians ready to invest in a serious home office upgrade this season.",
-    href: "/q2-spring-2026",
-    emoji: "🚀",
+    title: 'Sources and dates',
+    body: 'Every price, ingredient list and claim shows where it came from and when we checked it.',
+    tone: 'text-sage',
+  },
+  {
+    title: 'Money, disclosed',
+    body: integrations.affiliate.anyActive
+      ? 'Some links earn a commission. Each one is labelled, and commissions never decide what we include.'
+      : 'We have no active affiliate relationships today. If that changes, each paid link will say so.',
+    tone: 'text-sage',
   },
 ];
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "SmartShopCA",
-  url: "https://smartshopca.ca",
-  description:
-    "Curated seasonal deals and buying guides for Canadians. Honest pros and cons, no choice overload.",
-};
 
 export default function HomePage() {
   return (
     <>
-      <JsonLd schema={websiteSchema} />
+      <section aria-labelledby="promise" className="container-page pb-10 pt-12 sm:pt-16">
+        <p className="mb-4 text-sm uppercase tracking-[0.08em] text-ink-muted">An independent Canadian buying guide</p>
+        <h1 id="promise" className="heading-display max-w-[54rem] text-[36px] sm:text-[48px] lg:text-[60px] lg:leading-[1.08]">
+          Fewer products, clearer reasons to choose.
+        </h1>
+        <p className="mt-6 max-w-[42rem] text-[19px] text-ink-body">
+          SmartShopCA helps Canadians discover worthwhile products and see the evidence behind each option — where
+          it&rsquo;s made, what&rsquo;s in it, and what it costs to get it to your door. Two sections, each with its own
+          standards.
+        </p>
+        <p className="mt-5 text-[15px] text-ink-muted">
+          Researched by {founder.name} in {founder.location}.{' '}
+          <Link href="/about" className="font-semibold text-ink">
+            How SmartShopCA works
+          </Link>
+        </p>
+      </section>
 
-      {/* Season Banner */}
-      <SeasonBanner />
+      <section aria-label="Our two sections" className="container-page grid grid-cols-1 gap-6 pb-16 md:grid-cols-2">
+        {pillarOrder.map((id) => (
+          <PillarPanel key={id} pillar={pillars[id]} />
+        ))}
+      </section>
 
-      {/* Scenario Cards */}
-      <section className="my-10">
-        <h2 className="mb-6 text-center text-2xl font-bold text-primary">
-          What are you shopping for in Canada?
-        </h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {scenarios.map((scenario) => (
-            <Link
-              key={scenario.title}
-              href={scenario.href}
-              className="group rounded-lg border border-slate-200 p-5 transition-all hover:border-primary hover:shadow-md"
-            >
-              <div className="mb-2 text-3xl">{scenario.emoji}</div>
-              <h3 className="mb-1 font-bold text-primary group-hover:underline">
-                {scenario.title}
-              </h3>
-              <p className="text-sm text-slate-500">{scenario.description}</p>
+      <section aria-labelledby="how" className="border-y border-line bg-sand">
+        <div className="container-page py-16">
+          <h2 id="how" className="heading-display mb-2 text-[32px]">
+            How every shortlist works
+          </h2>
+          <p className="mb-9 max-w-[40rem] text-ink-body">
+            The same four commitments apply to both sections. Each section then adds its own evidence method.
+          </p>
+          <ol className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {commitments.map((c, i) => (
+              <li key={c.title} className="flex flex-col gap-2">
+                <span aria-hidden="true" className={`font-serif text-[40px] leading-none ${c.tone}`}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="text-lg font-bold">{c.title}</h3>
+                <p className="text-base text-ink-body">{c.body}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-9">
+            <Link href="/methodology" className="font-semibold text-ink">
+              Read the full methodology
             </Link>
-          ))}
+          </p>
         </div>
       </section>
 
-      {/* Email Capture — Golden Rule 13 */}
-      <EmailCapture />
+      <section aria-labelledby="preview" className="container-page py-16 sm:py-[72px]">
+        <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="kicker mb-2 text-sage">Preview · {pillars.care.label} › Skincare</p>
+            <h2 id="preview" className="heading-display text-[30px] sm:text-[32px]">
+              Moisturizer comparisons in progress
+            </h2>
+          </div>
+          <p className="max-w-[28rem] text-[15px] text-ink-muted">
+            Draft research, prices checked {formatDate(skincareComparisons[0].reviewed)}. These are not yet reviewed
+            recommendations, and nothing here is sold by us.
+          </p>
+        </div>
+        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {skincareComparisons.map((c) => {
+            const prices = c.candidates.map((p) => p.price.amountCad);
+            const held = c.candidates.filter((p) => p.status !== 'published').length;
+            return (
+              <li key={c.slug}>
+                <Link
+                  href={c.path}
+                  className="flex h-full flex-col gap-1.5 rounded-[14px] border border-line bg-paper p-7 text-ink no-underline transition-colors hover:border-sage"
+                >
+                  <span className="text-[21px] font-bold">{c.navLabel}</span>
+                  <span className="text-[15px] text-ink-body">
+                    {c.candidates.length} candidates under research · pack prices {formatCad(Math.min(...prices))}–
+                    {formatCad(Math.max(...prices))}
+                  </span>
+                  <span className="mt-1.5 text-sm text-ink-muted">
+                    {held === c.candidates.length
+                      ? 'All candidates on hold while evidence is confirmed.'
+                      : `${held} of ${c.candidates.length} on hold.`}
+                  </span>
+                  <span className="mt-2.5 font-semibold text-sage">
+                    See the {c.navLabel.toLowerCase()} comparison <span aria-hidden="true">→</span>
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <div className="container-page pb-20">
+        <EmailSignup />
+      </div>
     </>
   );
 }

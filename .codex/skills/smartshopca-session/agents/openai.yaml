@@ -1,0 +1,4 @@
+interface:
+  display_name: "SmartShopCA Session"
+  short_description: "Start, audit, or close SmartShopCA sessions"
+  default_prompt: "Use $smartshopca-session to start this SmartShopCA work session."

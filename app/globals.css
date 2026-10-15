@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-ivory font-sans text-[17px] leading-relaxed text-ink antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  /* Links in running text stay underlined; nav and button links opt out with `no-underline`. */
+  a {
+    @apply underline decoration-1 underline-offset-4;
+  }
+
+  :focus-visible {
+    outline: 3px solid #1f4232;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-4 sm:px-6;
+  }
+
+  .kicker {
+    @apply text-[13px] font-semibold uppercase tracking-[0.08em];
+  }
+
+  .heading-display {
+    @apply font-serif font-semibold leading-[1.1] tracking-[-0.015em];
+  }
+
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[10px] px-5 font-semibold no-underline transition-colors;
+  }
+
+  .tag {
+    @apply inline-block rounded px-1.5 py-px text-[12px] font-bold uppercase tracking-[0.04em];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

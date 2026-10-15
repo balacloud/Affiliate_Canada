@@ -1,0 +1,4 @@
+interface:
+  display_name: "SmartShopCA Product Research"
+  short_description: "Check Canadian product claims and evidence"
+  default_prompt: "Use $smartshopca-product-research to review the supplied skincare shortlist and report sourced findings, changes, and missing evidence."
