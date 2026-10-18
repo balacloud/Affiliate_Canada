@@ -1,7 +1,7 @@
 # SmartShopCA.ca — Master Session Guide
 
-> **Last Updated:** 2026-10-17 (Day 11 — persona/agent map and evidence-monitor definition)
-> **Current Version:** Day 11 local working tree, Next.js 16.4.2 / React 19.3.1; UX R2 retained, evidence-monitor profile defined. No new commit, release tag or deployment.
+> **Last Updated:** 2026-10-18 (Day 12 — approved local commits and live-site strategy audit)
+> **Current Version:** Day 12 local checkpoint, Next.js 16.4.2 / React 19.3.1; approved UX/runtime/tooling/monitor files committed. No push, release tag or deployment.
 > **Active Campaign:** None in the redesigned experience; seasonal collections are preparing. Legacy Q2 config is retained but archive routes no longer promote it.
 
 ---
@@ -103,7 +103,7 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Local pages | VERIFIED | Nine editorial routes, founder About, methodology/privacy and archived legacy URLs |
 | Founder | CONFIRMED BY USER | Balaji Kothandaraman, Kitchener, father of two, 18+ years technical delivery/data integrity; relevant approved copy integrated |
 | Skincare evidence | RESEARCH HOLDS | Four candidates across two comparisons, dated sources/prices and explicit gaps; no complete screening passes or purchase CTAs |
-| Email | UNAVAILABLE HONESTLY | Homepage shows a form-free notice; reusable topic/consent component retained, Kit server action missing |
+| Email | LOCAL UNAVAILABLE; LIVE FAKE SUCCESS | Local form-free notice retained; live October 18 handler logs input and simulates success, with privacy URL 404. No provider/account metrics verified |
 | Affiliates | RESEARCHED, NONE ACTIVE | Application-readiness research saved; no application or acceptance asserted |
 | Contact | UNCONFIRMED | Inbox must be set up/tested before displaying a contact address |
 | Tracking | BEST-EFFORT LOGGING | Real anchors navigate independently; API contract preserved; durable reporting missing |
@@ -112,17 +112,17 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Claude UX round 2 | INTEGRATED LOCALLY | Key differences precede product cards; default test script runs all 26 tests; upgraded root passes 64 browser states and 12 fragment checks |
 | Lint | PASS LOCALLY | ESLint 10 flat config; Core Web Vitals/TypeScript checks, zero warnings; run separately from build |
 | Local app port | FIXED 3300 | Cross-project/Notion/listener scan completed October 16; start/dev/production scripts agree; busy port fails rather than auto-switching |
-| Git/deployment | LOCAL WORKING TREE | Day 8 checkpoint retained; Day 9 UX and Day 10 framework changes uncommitted, unrelated research/prototype work preserved. No push/deploy. Last October 15 live check showed original home-office homepage |
+| Git/deployment | APPROVED FILES COMMITTED LOCALLY | Five logical commits save 56 approved changed paths; audit/snapshot recorded separately. Ask/ignore drafts and prior flagged history remain unresolved. No push/deploy. October 18 live check still shows original spring homepage |
 | Business validation | PRE-LAUNCH | Community feedback first, interviews optional; buyer focus, evidence, pilot budget/date and conversion remain to validate |
 | Governance | LOCAL | Six working lenses, two project skills and one new product_evidence_monitor custom definition; no live research pilot or active recurring schedule |
 
-Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_2026-10-14.md`. Latest state and next tasks: `docs/status/PROJECT_STATUS_DAY11_SHORT.md`.
+Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_2026-10-14.md`. Latest state and next tasks: `docs/status/PROJECT_STATUS_DAY12_SHORT.md`; concise strategist handoff: `docs/status/STRATEGY_SNAPSHOT.md`.
 
 ---
 
 ## Known Issues
 
-> Latest issue snapshot: `docs/versioned/KNOWN_ISSUES_DAY10.md`. Latest state: `docs/status/PROJECT_STATUS_DAY11_SHORT.md`. Local mitigations do not imply a production fix.
+> Latest issue snapshot: `docs/versioned/KNOWN_ISSUES_DAY12.md`. Latest state: `docs/status/PROJECT_STATUS_DAY12_SHORT.md`. Local mitigations do not imply a production fix.
 
 | ID | Severity | Description |
 |:--|:--|:--|
@@ -163,10 +163,13 @@ Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_20
 | Day 9 | 2026-10-15 | Integrated the 19-file UX R2 handoff, moved Key differences before product cards and enabled all 26 tests in the normal command. Merged build, 52 browser states and 12 fragment checks pass; all four candidate records unchanged. No commit, push or deploy. |
 | Day 10 | 2026-10-15–16 | Upgraded Next.js 14.2.35 to 16.4.2, React to 19.3.1 and Node target/types to 22; migrated archive params and established ESLint 10. Build/lint/26 tests/clean lockfile install and 64 browser states/12 fragment checks pass. Remaining dependency audit findings documented. No commit, push or deploy. |
 | Day 11 | 2026-10-16–17 | Explained Kit, mapped six working lenses/two customer hypotheses/two skills, defined a research-only custom monitor and created verified interactive HTML. Configuration syntax checked; no live evidence pilot or recurring task activation. No commit, push or deploy. |
+| Day 12 | 2026-10-17–18 | Inventoried/scanned local/unpublished files; user approved confident files. Saved 56 changed paths in five logical commits, fresh lint/build/26 tests pass. Read-only live audit confirms stale spring commerce, placeholder destinations, fake signup and privacy 404. Strategy snapshot records UNKNOWN account/deploy metrics. Safety and prior-history approvals pending; no push/deploy. |
 
 ---
 
 ## Next Session Priorities
+
+**Day 12 approval gate — 2026-10-18:** User approved committing confident files only. Five logical commits saved 56 inventoried changed paths; ask/ignore files were not added and the earlier four commits were not rewritten. Lint/build/26 tests freshly pass. Read-only live audit confirms Spring Setup 2026, five placeholder buying destinations, simulated signup success and `/privacy` 404; new care/robots/sitemap routes 404. Deployed SHA, account metrics, current billing and deployment trigger settings UNKNOWN. Strategy snapshot and audit are in `docs/status/`. Proposed minimum safety intervention is hide signup/placeholder CTAs plus paused/noindex; no safety implementation or deployment performed. Stop for that decision. Do not push: 25 ask-classified paths remain in older unpublished history, and an ordinary push may trigger Vercel deployment. No force push or silent history rewrite.
 
 **Day 11 monitoring/map update (2026-10-17):** Created `docs/status/SMARTSHOPCA_PERSONA_AGENT_MAP_2026-10-16.html`, `docs/stable/PRODUCT_EVIDENCE_MONITOR.md` and `.codex/agents/product-evidence-monitor.toml` (agent name `product_evidence_monitor`). Six professional lenses and two customer hypotheses remain distinct from agents/skills. Custom definition parses; HTML checks pass at three widths. No live research pilot or active daily schedule; no claim of validated accuracy. Next monitoring step is a reviewable baseline run followed by the defined acceptance cases, then actual scheduler activation/verification. Suggested 09:00 America/Toronto cadence is only a proposal. Existing publication and dependency blockers remain. See Day 11 status.
 

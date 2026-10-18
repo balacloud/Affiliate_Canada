@@ -1,11 +1,13 @@
 # Roadmap — SmartShopCA.ca
 
 > **Current Phase:** Product architecture reconciliation and launch readiness
-> **Current Version:** Day 11 local working tree; Next.js 16.4.2 / React 19.3.1, UX R2 retained; no production release
+> **Current Version:** Day 12 local checkpoint; approved implementation saved, live site still stale; no production release
 
 ---
 
 ## October 2026 Direction Reset
+
+**Day 12 commit/live audit — 2026-10-18:** User approved confident files; five logical commits save 56 changed paths, fresh lint/build/26 tests pass. Public site still serves spring placeholders and fake signup with privacy 404. Strategy snapshot saved; pause/hide/noindex safety proposal awaits approval. Older unpublished-history privacy/scope flags and unknown Vercel push triggers block push. No deployment; no approved launch-scope change. See `docs/status/PROJECT_STATUS_DAY12_SHORT.md`.
 
 **Day 11 monitor/map — 2026-10-17:** Evidence-monitor operating profile and one custom agent definition created; six professional lenses and two existing skills mapped in interactive HTML. No daily schedule or live research pilot activated. See `docs/status/PROJECT_STATUS_DAY11_SHORT.md`.
 
