@@ -37,8 +37,7 @@ export default function PrivacyPage() {
             </p>
           ) : (
             <p className="text-ink-body">
-              Email updates are not switched on yet. The sign-up form is shown in a disabled state, and nothing typed
-              into it is sent or stored.
+              Email updates are not switched on yet. There is no sign-up form, and no email addresses are collected.
             </p>
           )}
         </section>

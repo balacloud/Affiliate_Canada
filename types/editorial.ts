@@ -174,6 +174,8 @@ export interface SkincareComparison {
   readiness: Readiness;
   navLabel: string;
   h1: string;
+  /** One-sentence purpose shown directly under the H1. */
+  purpose: string;
   metaTitle: string;
   metaDescription: string;
   reviewed: IsoDate;
@@ -198,6 +200,8 @@ export interface PillarDefinition {
   href: string;
   promise: string;
   description: string;
+  /** One-sentence benefit for compact entry points (homepage panels). */
+  summary: string;
   points: string[];
   readiness: Readiness;
   readinessLabel: string;

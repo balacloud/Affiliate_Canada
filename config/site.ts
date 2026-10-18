@@ -26,6 +26,7 @@ export const pillars: Record<PillarId, PillarDefinition> = {
     promise: 'Discover useful picks for the current season.',
     description:
       'Small, well-reviewed selections of distinctive products for one specific seasonal need, explained with their trade-offs rather than ranked by hype. Broader than gifting.',
+    summary: 'A few well-reviewed picks for one seasonal need at a time, with trade-offs and origin labelled precisely.',
     points: [
       'Up to seven picks, each answering one use case',
       'Made in, owned in and sold in Canada labelled separately',
@@ -42,6 +43,7 @@ export const pillars: Record<PillarId, PillarDefinition> = {
     promise: 'Understand ingredients and origin.',
     description:
       'Canadian-made products compared on published ingredient lists and product-level origin evidence. Personal care and household each get their own criteria, starting with skincare.',
+    summary: 'Canadian-made products compared on published ingredients and product-level origin evidence. Skincare comes first.',
     points: [
       'Face and body moisturizers, compared separately',
       'Origin evidence checked per product, not inferred from a brand',

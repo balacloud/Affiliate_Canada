@@ -8,7 +8,7 @@ import { PillarDot } from '@/components/editorial/PillarDot';
 export function SiteHeader() {
   return (
     <header className="relative border-b border-line bg-ivory">
-      <div className="container-page flex min-h-[80px] items-center justify-between gap-6 lg:min-h-[104px]">
+      <div className="container-page flex min-h-[64px] items-center justify-between gap-6 sm:min-h-[72px] lg:min-h-[84px]">
         <Wordmark />
         <nav aria-label="About SmartShopCA" className="hidden lg:block">
           <ul className="flex items-center gap-7 text-[15px]">
@@ -32,7 +32,7 @@ export function SiteHeader() {
             <li key={id} className="first:border-r first:border-line">
               <Link
                 href={pillars[id].href}
-                className="flex min-h-[76px] items-center justify-center gap-2 px-3 py-4 text-center font-serif text-[16px] leading-snug no-underline hover:bg-sand sm:min-h-[64px] sm:text-[20px] lg:min-h-[72px] lg:gap-3 lg:text-[23px]"
+                className="flex min-h-[64px] items-center justify-center gap-2 px-2 py-2.5 text-center font-serif text-[15px] leading-snug no-underline hover:bg-sand min-[400px]:text-[16px] sm:min-h-[60px] sm:px-3 sm:text-[19px] lg:min-h-[64px] lg:gap-3 lg:text-[22px]"
               >
                 <PillarDot pillar={id} />
                 <span>{pillars[id].label}</span>

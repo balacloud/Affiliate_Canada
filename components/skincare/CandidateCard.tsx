@@ -1,9 +1,10 @@
 import type { SkincareCandidate, SourceRef } from '@/types/editorial';
 import { formatCad, formatDate, isPurchaseEligible, unitPrice } from '@/lib/format';
 import { EvidenceTag } from '@/components/editorial/EvidenceTag';
-import { ReadinessBadge } from '@/components/editorial/ReadinessBadge';
 import { OutboundLink } from '@/components/OutboundLink';
 import { EvidenceLink } from '@/components/EvidenceLink';
+import { SourceLinks } from './SourceLinks';
+import { isStillChecking } from '@/lib/readiness';
 
 interface CandidateCardProps {
   candidate: SkincareCandidate;
@@ -12,54 +13,72 @@ interface CandidateCardProps {
 }
 
 /**
- * One product in a comparison. Essential limits (hold reasons, unknown
- * origin, missing ingredient list) are always visible — never tucked into a
- * tooltip or a collapsed panel.
+ * Full evidence for one product, in a native <details> panel so the page
+ * stays skimmable. All text is server-rendered in the initial HTML (the
+ * panel only collapses it visually). The essential limits — hold status and
+ * each hold reason — are repeated in the always-visible <summary> line and
+ * in CandidateSummary, so they are never hidden behind a click.
+ *
+ * Anchor: #details-<candidate id>. Each claim carries its own source links
+ * from the record's source IDs; empty IDs render no link.
  */
 export function CandidateCard({ candidate: c, sources, pageSlug }: CandidateCardProps) {
-  const headingId = `p-${c.id}`;
   const unit = unitPrice(c.price, c.amount);
   const eligible = isPurchaseEligible(c);
+  const held = isStillChecking(c);
   const productSource = sources[c.price.sourceId];
 
   return (
-    <article aria-labelledby={headingId} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-paper">
-      <div
-        role="img"
-        aria-label="No product photo available"
-        className="flex h-[120px] items-center justify-center border-b border-line bg-sand text-[13px] text-ink-muted"
-      >
-        <span aria-hidden="true">Product photo not available</span>
-      </div>
-      <div className="flex flex-col gap-[18px] p-6 sm:p-7">
-        {c.status !== 'published' ? (
-          <ReadinessBadge tone="hold" marker="pause">
-            On hold — {c.holdReasons.join('; ').toLowerCase()}
-          </ReadinessBadge>
-        ) : null}
-        <div>
-          <h3 id={headingId} className="heading-display text-[24px] sm:text-[26px]">
-            {c.productName}
-          </h3>
-          <p className="mt-0.5 text-[15px] text-ink-muted">
-            {c.format} · {c.variant}
-          </p>
-        </div>
-        <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <span className="text-[28px] font-bold">{formatCad(c.price.amountCad)}</span>
-          <span className="text-[15px] text-ink-muted">
-            {unit.label} · {c.price.priceType} price, {formatDate(c.price.checked)}
+    <details id={`details-${c.id}`} className="group scroll-mt-6 rounded-2xl border border-line bg-paper">
+      <summary className="flex min-h-[56px] list-none flex-col gap-2 px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4 sm:px-6">
+        <span className="flex flex-col gap-0.5">
+          <span className="font-serif text-[20px] font-semibold leading-snug sm:text-[22px]">{c.productName}</span>
+          <span className="text-sm text-ink-muted">
+            {held ? (
+              <>
+                <span className="font-semibold text-rust-dark">Still checking:</span> {c.holdReasons.length ? c.holdReasons.join('; ') : 'review not complete'}
+              </>
+            ) : (
+              'Full evidence, shipping and returns'
+            )}
           </span>
+        </span>
+        <span className="mt-1 flex shrink-0 items-center gap-1.5 text-sm font-semibold text-sage-dark">
+          <span className="group-open:hidden">Show evidence</span>
+          <span className="hidden group-open:inline">Hide</span>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            aria-hidden="true"
+            className="transition-transform group-open:rotate-180"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </span>
+      </summary>
+
+      <div className="flex flex-col gap-5 border-t border-line-soft px-5 pb-6 pt-5 sm:px-6">
+        <p className="text-[15px]">
+          <span className="font-semibold">
+            {formatCad(c.price.amountCad)} for {c.variant}
+          </span>{' '}
+          · {unit.label} · {c.price.priceType} price on {formatDate(c.price.checked)}
+          <SourceLinks ids={[c.price.sourceId]} sources={sources} label="Price source" />
         </p>
 
-        <dl className="flex flex-col gap-3.5 text-base">
+        <dl className="flex flex-col gap-4 text-base">
           <div>
             <dt className="font-bold">Origin</dt>
-            <dd className="mt-1 flex flex-col gap-1.5">
+            <dd className="mt-1 flex flex-col gap-2">
               {c.origin.statements.map((s) => (
                 <span key={s.text}>
                   <EvidenceTag kind="origin" level={s.level} />
                   {s.text}
+                  <SourceLinks ids={s.sourceIds} sources={sources} />
                 </span>
               ))}
             </dd>
@@ -69,7 +88,12 @@ export function CandidateCard({ candidate: c, sources, pageSlug }: CandidateCard
             <dd className="mt-1">
               <EvidenceTag kind="ingredients" level={c.ingredients.completeness} />
               {c.ingredients.text}
-              {c.ingredients.scentObservation ? <> {c.ingredients.scentObservation}</> : null}
+              {c.ingredients.scentObservation ? (
+                <>
+                  {' '}
+                  <span className="font-semibold">Our observation:</span> {c.ingredients.scentObservation}
+                </>
+              ) : null}
               {c.ingredients.criteriaNotes?.length ? (
                 <ul className="mt-1.5 list-disc pl-5">
                   {c.ingredients.criteriaNotes.map((n) => (
@@ -77,22 +101,32 @@ export function CandidateCard({ candidate: c, sources, pageSlug }: CandidateCard
                   ))}
                 </ul>
               ) : null}
+              <SourceLinks ids={c.ingredients.sourceIds} sources={sources} />
             </dd>
           </div>
           <div>
             <dt className="font-bold">Scent</dt>
             <dd className="mt-1">
-              {c.scent.brandClaim ? `The brand describes it as ${c.scent.brandClaim}.` : 'The brand makes no scent claim we could find.'}
+              {c.scent.brandClaim
+                ? `Brand's own wording: "${c.scent.brandClaim}".`
+                : 'The brand makes no scent claim we could find.'}
             </dd>
           </div>
           <div>
-            <dt className="font-bold">Shipping &amp; returns</dt>
+            <dt className="font-bold">Shipping</dt>
             <dd className="mt-1">
               {c.shipping.text}{' '}
               {c.shipping.illustrativeSubtotalCad !== null
                 ? `One item comes to about ${formatCad(c.shipping.illustrativeSubtotalCad)} before tax.`
-                : "We don't show a delivered total."}{' '}
+                : "We don't show a delivered total."}
+              <SourceLinks ids={c.shipping.sourceIds} sources={sources} />
+            </dd>
+          </div>
+          <div>
+            <dt className="font-bold">Returns</dt>
+            <dd className="mt-1">
               {c.returns.text}
+              <SourceLinks ids={c.returns.sourceIds} sources={sources} />
             </dd>
           </div>
         </dl>
@@ -115,12 +149,6 @@ export function CandidateCard({ candidate: c, sources, pageSlug }: CandidateCard
             </ul>
           </div>
         </div>
-        {c.tradeOffs.length ? (
-          <p className="text-[15px] text-ink-body">
-            <span className="font-semibold text-ink">Trade-off: </span>
-            {c.tradeOffs.join(' ')}
-          </p>
-        ) : null}
 
         {eligible && c.merchantLink.href ? (
           <div className="flex flex-wrap items-center gap-3">
@@ -147,13 +175,18 @@ export function CandidateCard({ candidate: c, sources, pageSlug }: CandidateCard
             No buying link while this product is on hold.{' '}
             {productSource ? (
               <EvidenceLink href={productSource.url} className="text-sage-dark">
-                See the product page we checked
+                See the {c.brand} product page we checked
               </EvidenceLink>
             ) : null}
           </p>
         )}
-        <p className="text-[13px] text-ink-muted">Reviewed {formatDate(c.reviewed)}</p>
+        <p className="text-[13px] text-ink-muted">
+          Reviewed {formatDate(c.reviewed)} ·{' '}
+          <a href={`#p-${c.id}`} className="text-ink-muted">
+            Back to {c.brand} summary
+          </a>
+        </p>
       </div>
-    </article>
+    </details>
   );
 }

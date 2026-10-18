@@ -12,7 +12,9 @@ export const faceMoisturizers: SkincareComparison = {
   pillar: 'care',
   readiness: 'preview',
   navLabel: 'Face moisturizers',
-  h1: 'Which face moisturizer should you compare for colder weather in Canada in 2026?',
+  h1: 'Face moisturizers for colder weather in Canada (2026)',
+  purpose:
+    'Two face creams from Canadian brands, both described by their brands as fragrance-free, compared on origin evidence, ingredient disclosure and delivered cost.',
   metaTitle: 'Face moisturizers for colder weather in Canada (2026 draft comparison)',
   metaDescription:
     'A draft comparison of two fragrance-free face creams from Canadian brands, with origin evidence, ingredient disclosure and CAD prices checked October 14, 2026.',

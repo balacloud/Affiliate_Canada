@@ -12,7 +12,9 @@ export const bodyMoisturizers: SkincareComparison = {
   pillar: 'care',
   readiness: 'preview',
   navLabel: 'Body moisturizers',
-  h1: 'Which body moisturizer should you compare for dry winter skin in Canada in 2026?',
+  h1: 'Body moisturizers for dry winter skin in Canada (2026)',
+  purpose:
+    'A body lotion and a body butter from Canadian brands, compared on origin evidence, ingredient disclosure and delivered cost.',
   metaTitle: 'Body moisturizers for dry winter skin in Canada (2026 draft comparison)',
   metaDescription:
     'A draft comparison of an unscented body lotion and a scent-free body butter from Canadian brands, with origin evidence, published ingredients and CAD prices checked October 14, 2026.',
