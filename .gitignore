@@ -36,3 +36,6 @@ next-env.d.ts
 
 # click tracking data
 /data/clicks.json
+
+# local app process and logs
+/.local-run/
