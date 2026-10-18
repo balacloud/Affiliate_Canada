@@ -69,3 +69,9 @@ These are expected classifications checked against this rule table, not empirica
 | “Publish the site” | Release/content readiness checks → explicitly authorized deployment → live verification | Treat local build as publication or infer paid-plan approval |
 
 Improve routing when a real task exposes a missed review or unnecessary work. Do not describe these static examples as measured accuracy or a continuously running agent.
+
+## Product Evidence Monitor — defined October 16–17, 2026
+
+The existing Product-Evidence/Editorial lens now has a focused operating profile at `docs/stable/PRODUCT_EVIDENCE_MONITOR.md` and one project-scoped custom agent definition at `.codex/agents/product-evidence-monitor.toml` (name `product_evidence_monitor`). It reuses the existing research skill and restricts its intended writes to dated research reports. It does not create a seventh professional persona, an always-running worker or a daily schedule. Parent permissions remain in force; prompt instructions alone do not enforce a filesystem sandbox.
+
+Use the profile for current-candidate monitoring. Invoke the custom agent only when delegation is authorized; ordinary tasks can use the same method in the current assistant. The configuration is syntax-checked, not proven through live product research or behavioral evaluation. No daily task has been activated. Proposed cadence and twelve acceptance cases live in the operating profile. Interactive explanation: `docs/status/SMARTSHOPCA_PERSONA_AGENT_MAP_2026-10-16.html`.
