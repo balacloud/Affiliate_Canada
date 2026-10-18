@@ -12,8 +12,9 @@ export function generateStaticParams() {
   return Object.values(campaigns).map((campaign) => ({ season: campaign.slug }));
 }
 
-export default function SeasonPage({ params }: { params: { season: string } }) {
-  const key = getCampaignKeyBySlug(params.season);
+export default async function SeasonPage({ params }: { params: Promise<{ season: string }> }) {
+  const { season } = await params;
+  const key = getCampaignKeyBySlug(season);
   if (!key) notFound();
   return <LegacyContentNotice title={campaigns[key].label} />;
 }
