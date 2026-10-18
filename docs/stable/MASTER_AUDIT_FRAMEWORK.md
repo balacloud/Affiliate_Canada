@@ -87,13 +87,19 @@ Every finding gets verdict: **VERIFIED / PLAUSIBLE / MISLEADING / BROKEN / FALSE
 
 [ ] No fabricated availability — products are actually in stock in Canada
     → manual spot-check: pick 2 random products, verify they ship to Canada
+
+[ ] Pillar context is explicit and recommendations are not mixed across unrelated intents
+    → seasonal and skincare content use distinct routes, methods, and comparison criteria
+
+[ ] Every "Canadian" claim defines whether it means ownership, headquarters,
+    manufacturing, formulation, ingredients, or retail availability
 ```
 
 ---
 
 ### Category 2: Golden Rule Compliance
 
-**Principle:** All 21 Golden Rules — check each has not been violated since last audit
+**Principle:** All 27 Golden Rules — check each has not been violated since last audit
 
 ```
 [ ] R1: Pages are decision helpers (3–7 picks, opinionated)
@@ -117,6 +123,12 @@ Every finding gets verdict: **VERIFIED / PLAUSIBLE / MISLEADING / BROKEN / FALSE
 [ ] R19: Non-obvious decisions documented in docs/Research/
 [ ] R20: No fabricated data (prices, availability, specs)
 [ ] R21: Pre-publish checklist run before every page goes live
+[ ] R22: Visible author and methodology signals exist on content pages
+[ ] R23: Product schema includes supported enrichment fields
+[ ] R24: Visible HTML is structured as carefully as JSON-LD
+[ ] R25: Editorial pillars remain distinct
+[ ] R26: Health-adjacent claims are sourced, qualified, and non-medical
+[ ] R27: Every Canadian-origin claim defines what "Canadian" means
 ```
 
 ---
@@ -204,8 +216,8 @@ Every finding gets verdict: **VERIFIED / PLAUSIBLE / MISLEADING / BROKEN / FALSE
     → Full affiliate disclosure statement
     → Last updated date
 
-[ ] Privacy Policy exists (required under PIPEDA if collecting emails):
-    → check if /privacy page exists — if not, flag as needed before Phase 1
+[ ] Privacy Policy exists and the live deployment exposes it:
+    → check /privacy and the global footer on the production domain
 
 [ ] Email capture complies with CASL:
     → Explicit opt-in (no pre-checked boxes)
@@ -220,6 +232,12 @@ Every finding gets verdict: **VERIFIED / PLAUSIBLE / MISLEADING / BROKEN / FALSE
 
 [ ] Author attribution on content pages (E-E-A-T signal):
     → does Article schema include author? Is there visible attribution?
+
+[ ] Skincare pages state the ingredient-screening methodology, sources,
+    uncertainty, review date, and informational/non-medical boundary
+
+[ ] Claims such as Canadian-made, sustainable, certified, clean, non-toxic,
+    or hormone-related are traceable and appropriately qualified
 ```
 
 ---
@@ -248,6 +266,9 @@ Every finding gets verdict: **VERIFIED / PLAUSIBLE / MISLEADING / BROKEN / FALSE
 
 [ ] Campaign tagging:
     → When ConvertKit is live, does form submit tag subscriber with campaign tag?
+
+[ ] Pillar preference is captured:
+    → subscriber can distinguish seasonal-favourites and skincare interests
 
 [ ] Lead magnet copy is compelling:
     → "Get our [Season] Canadian deals guide free" — matches current season?
@@ -350,7 +371,7 @@ After running all 8 categories, tally findings:
 
 **Full audit:**
 > "Run the full audit"
-> Claude reads all 8 categories against the current codebase + live site, produces findings table.
+> The implementation agent reads all 8 categories against the current codebase + live site and produces a findings table.
 
 **Targeted audit:**
 > "Run Category 3 — schema audit"
@@ -359,11 +380,11 @@ After running all 8 categories, tally findings:
 
 **Weekly trigger (Sunday evening):**
 > "Weekly audit"
-> Claude runs Category 1 (content), Category 3 (schema), Category 4 (affiliate links), Category 5 (legal) — the 4 highest-value categories for a live affiliate site.
+> The implementation agent runs Category 1 (content), Category 3 (schema), Category 4 (affiliate links), and Category 5 (legal).
 
 **Pre-publish trigger (before any page goes live):**
 > "Pre-publish audit for [page name]"
-> Claude runs the 30-point Pre-Publish Checklist from `docs/stable/PRE_PUBLISH_CHECKLIST.md` against the specific page.
+> The implementation agent runs the pre-publish checklist against the specific page, including the pillar-specific checks when applicable.
 
 ---
 

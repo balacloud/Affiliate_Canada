@@ -1,7 +1,7 @@
 # SmartShopCA.ca — Master Session Guide
 
-> **Last Updated:** 2026-10-15 (Day 8 close — local redesign checkpoint; Claude UX round 2 verified separately)
-> **Current Version:** Day 8 local checkpoint, Next.js 14.2.35; no new release tag or deployment. Claude UX round 2 is not integrated.
+> **Last Updated:** 2026-10-17 (Day 11 — persona/agent map and evidence-monitor definition)
+> **Current Version:** Day 11 local working tree, Next.js 16.4.2 / React 19.3.1; UX R2 retained, evidence-monitor profile defined. No new commit, release tag or deployment.
 > **Active Campaign:** None in the redesigned experience; seasonal collections are preparing. Legacy Q2 config is retained but archive routes no longer promote it.
 
 ---
@@ -74,7 +74,7 @@ The pillars share brand trust, infrastructure, affiliate disclosure, analytics, 
 ## Architecture
 
 ```
-Framework:  Next.js 14+ (App Router, TypeScript, SSG/ISR)
+Framework:  Next.js 16.4.2 (App Router, TypeScript, SSG/ISR)
 Styling:    Tailwind CSS
 Content:    Typed editorial skincare records + retained legacy MDX
 Deploy:     Vercel (free tier)
@@ -103,25 +103,26 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Local pages | VERIFIED | Nine editorial routes, founder About, methodology/privacy and archived legacy URLs |
 | Founder | CONFIRMED BY USER | Balaji Kothandaraman, Kitchener, father of two, 18+ years technical delivery/data integrity; relevant approved copy integrated |
 | Skincare evidence | RESEARCH HOLDS | Four candidates across two comparisons, dated sources/prices and explicit gaps; no complete screening passes or purchase CTAs |
-| Email | DISABLED HONESTLY | Topic/consent UI exists; Kit subscription server action missing, no simulated success |
+| Email | UNAVAILABLE HONESTLY | Homepage shows a form-free notice; reusable topic/consent component retained, Kit server action missing |
 | Affiliates | RESEARCHED, NONE ACTIVE | Application-readiness research saved; no application or acceptance asserted |
 | Contact | UNCONFIRMED | Inbox must be set up/tested before displaying a contact address |
 | Tracking | BEST-EFFORT LOGGING | Real anchors navigate independently; API contract preserved; durable reporting missing |
-| Build/tests | PASS LOCALLY | Build generates 18 static pages; 14 meaningful editorial tests pass |
-| Browser checks | PASS LOCALLY | Nine routes at three widths, keyboard menu, links/states/schema/archive/API checks; no automated axe violations |
-| Claude UX round 2 | VERIFIED, NOT INTEGRATED | 26 tests and 52 browser states pass in a temporary copy; root app still has 14 tests and the initial design. Move Key differences before product cards during integration |
-| Lint | NOT ESTABLISHED | Interactive setup still requires non-interactive configuration |
-| Git/deployment | LOCAL CHECKPOINT | Initial redesign/checkpoint saved locally; unrelated research/prototype work preserved separately. No push/deploy. October 15 live check still showed original home-office homepage |
+| Build/tests | PASS LOCALLY | Next.js 16 build reports 17 static entries; all editorial/archive routes retained; all 26 tests pass |
+| Browser checks | PASS LOCALLY | 14 routes at four widths plus 8 expanded states; 12 fragment checks, section order, keyboard menu, links/schema/archive/API pass; no automated axe violations |
+| Claude UX round 2 | INTEGRATED LOCALLY | Key differences precede product cards; default test script runs all 26 tests; upgraded root passes 64 browser states and 12 fragment checks |
+| Lint | PASS LOCALLY | ESLint 10 flat config; Core Web Vitals/TypeScript checks, zero warnings; run separately from build |
+| Local app port | FIXED 3300 | Cross-project/Notion/listener scan completed October 16; start/dev/production scripts agree; busy port fails rather than auto-switching |
+| Git/deployment | LOCAL WORKING TREE | Day 8 checkpoint retained; Day 9 UX and Day 10 framework changes uncommitted, unrelated research/prototype work preserved. No push/deploy. Last October 15 live check showed original home-office homepage |
 | Business validation | PRE-LAUNCH | Community feedback first, interviews optional; buyer focus, evidence, pilot budget/date and conversion remain to validate |
-| Governance | LOCAL | Repo agent/session/research instructions present; research monitoring schedule not configured |
+| Governance | LOCAL | Six working lenses, two project skills and one new product_evidence_monitor custom definition; no live research pilot or active recurring schedule |
 
-Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_2026-10-14.md`. Latest close and exact resume task: `docs/status/PROJECT_STATUS_DAY8_SHORT.md`.
+Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_2026-10-14.md`. Latest state and next tasks: `docs/status/PROJECT_STATUS_DAY11_SHORT.md`.
 
 ---
 
 ## Known Issues
 
-> Latest issue snapshot: `docs/versioned/KNOWN_ISSUES_DAY8.md`. Latest close: `docs/status/PROJECT_STATUS_DAY8_SHORT.md`. Local mitigations do not imply a production fix.
+> Latest issue snapshot: `docs/versioned/KNOWN_ISSUES_DAY10.md`. Latest state: `docs/status/PROJECT_STATUS_DAY11_SHORT.md`. Local mitigations do not imply a production fix.
 
 | ID | Severity | Description |
 |:--|:--|:--|
@@ -136,7 +137,7 @@ Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_20
 | KI-013 | LOW | `hello@smartshopca.ca` business email setup is unconfirmed |
 | KI-014 | HIGH | Local two-pillar architecture implemented; deployment and real email preferences remain pending |
 | KI-015 | CRITICAL | Local legacy routes archived and stale commerce removed; live deployment not checked/replaced, do not drive traffic yet |
-| KI-016 | MEDIUM | 14 editorial tests now pass locally; non-interactive lint remains missing |
+| KI-016 | MEDIUM | 26 tests and non-interactive ESLint pass locally; full-browser accessibility limits remain |
 | KI-017 | MEDIUM | Local, GitHub, Vercel, and canonical documentation states are not aligned |
 
 **Resolved Day 1:** KI-001 (git repo), KI-002 (Vercel deployed), KI-006 (.gitignore)
@@ -159,20 +160,25 @@ Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_20
 | Day 6 | 2026-10-09 | Added Codex-native governance; clarified SmartShopCA as an umbrella brand with seasonal-favourites and clean-skincare pillars; documented campaign and deployment drift. |
 | Day 7 | 2026-10-13–14 | Saved first-pass review, continuation handoff, customer-needs and generic SaaS prompts. Confirmed side-income-first, 14 hours/week, bootstrap constraints. Generic reports attributed to ChatGPT/Gemini; Perplexity supplied a prompt audit. No product changes or pivot approved. |
 | Day 8 | 2026-10-14–15 | Initial two-pillar design integrated locally with grounded founder About and held face/body research; community/affiliate/hosting/exit research reviewed, role routing and design handoff convention saved. Claude UX round 1 had two reproduced bugs; round 2 passes 26 tests and 52 browser states in isolation but is NOT integrated. Root build/14 tests pass at close; no push/deploy. |
+| Day 9 | 2026-10-15 | Integrated the 19-file UX R2 handoff, moved Key differences before product cards and enabled all 26 tests in the normal command. Merged build, 52 browser states and 12 fragment checks pass; all four candidate records unchanged. No commit, push or deploy. |
+| Day 10 | 2026-10-15–16 | Upgraded Next.js 14.2.35 to 16.4.2, React to 19.3.1 and Node target/types to 22; migrated archive params and established ESLint 10. Build/lint/26 tests/clean lockfile install and 64 browser states/12 fragment checks pass. Remaining dependency audit findings documented. No commit, push or deploy. |
+| Day 11 | 2026-10-16–17 | Explained Kit, mapped six working lenses/two customer hypotheses/two skills, defined a research-only custom monitor and created verified interactive HTML. Configuration syntax checked; no live evidence pilot or recurring task activation. No commit, push or deploy. |
 
 ---
 
 ## Next Session Priorities
 
-**RESUME HERE — Day 8 close (2026-10-15):** Integrate `docs/Claude_Design_Handoff/New_oct12_2026_2pm/smartshopca-ux-revision-r2.zip` (19 source/test files, complete change set relative to supplied baseline). It has NOT been copied into the working app. Read the adjacent `VERIFICATION_R2.md`, preserve originals and unrelated changes, move Key differences above product cards and reorder on-page links/comments. Include `tests/fragment-readiness.test.cjs` in the normal test command. Run root build, all 26 tests and affected browser checks after merging; then update preview if requested. Next separate task: supported Next.js upgrade. Do not ask the founder to repeat this context or send a third design round for the reorder.
+**Day 11 monitoring/map update (2026-10-17):** Created `docs/status/SMARTSHOPCA_PERSONA_AGENT_MAP_2026-10-16.html`, `docs/stable/PRODUCT_EVIDENCE_MONITOR.md` and `.codex/agents/product-evidence-monitor.toml` (agent name `product_evidence_monitor`). Six professional lenses and two customer hypotheses remain distinct from agents/skills. Custom definition parses; HTML checks pass at three widths. No live research pilot or active daily schedule; no claim of validated accuracy. Next monitoring step is a reviewable baseline run followed by the defined acceptance cases, then actual scheduler activation/verification. Suggested 09:00 America/Toronto cadence is only a proposal. Existing publication and dependency blockers remain. See Day 11 status.
 
-**Verification separation:** root `npm run build` + 14 tests passed on October 15 at close. The 26 tests/52 browser states refer to the isolated R2 candidate, not the root app or deployed site. Live checks on October 15 found old homepage, skincare URL 404, robots/sitemap 404 and apex redirect to www. No public citation/indexing or actual account billing evidence obtained.
+**RESUME HERE — Day 10 framework upgrade (2026-10-16):** Root uses exact Next.js 16.4.2 / React 19.3.1, Node 22 and ESLint 10.12.0. Archive request params are async; TypeScript uses automatic JSX runtime. Build, lint, all 26 tests, clean lockfile installation, 64 browser states and 12 fragment checks pass. UX R2 ordering/holds retained. Remaining dependency advisories need a scoped follow-up; then resolve product evidence, contact/Kit and crawl/canonical release blockers. No commit, push or deployment. See `docs/status/PROJECT_STATUS_DAY10_SHORT.md` and the dated framework decision record.
 
-**Claude Design handoff location (2026-10-15):** Founder requires future briefs/baseline ZIPs/returned outputs under `docs/Claude_Design_Handoff/`, organized by dated task. See its README. Current outgoing UX revision is in `2026-10-15_UX_Revision/`; its brief and verified source ZIP moved from Research. Awaiting Claude output; no UX implementation from this revision yet.
+**Verification separation:** Day 10 results apply to the upgraded root app; Next.js 16 reports 17 static entries, with all 14 editorial/archive URLs checked at four widths plus 8 expanded states. Earlier 18-page/52-state results are historical, not a lost-route finding. Production was not rechecked during this change; the last October 15 audit found old homepage, skincare URL 404 and robots/sitemap 404. No product-source/price refresh, public citation/indexing or account billing evidence obtained. Audit still reports 13 affected packages (7 high/6 moderate), production-only 4 moderate in legacy frontmatter dependencies; Next/React have no returned findings. Clean install emits legacy ESLint-plugin peer warnings but succeeds without force/legacy-peer-deps.
 
-**Persona routing (2026-10-15):** `AGENTS.md` now routes tasks through `docs/stable/PERSONA_ROUTER.md`: one lead plus applicable evidence, UX, technical and retrieval checks. Role definitions/customer hypotheses are in `docs/Research/SMARTSHOPCA_ROLE_PACK_DRAFT_2026-10-15.md`. This is assistant instruction routing, not a background service or separate agents; no runtime implementation or empirical routing evaluation claimed.
+**Claude Design handoffs:** Original R2 archive and verification remain unchanged in `docs/Claude_Design_Handoff/New_oct12_2026_2pm/`. Future briefs/baselines/returns belong in dated folders under `docs/Claude_Design_Handoff/`; see its README. The October 15 UX revision is now integrated locally; no additional design return is needed for the section reorder.
 
-**Latest completed work (2026-10-14):** Imported `docs/smartshopca-handoff.zip` into the existing Next.js app, reviewed it against the design brief and founder-approved copy, corrected tracking/gates/claims, archived stale routes and verified local build, tests and browser behavior. No commit, push, deployment, outreach, application or spending occurred.
+**Persona routing (2026-10-15):** `AGENTS.md` now routes tasks through `docs/stable/PERSONA_ROUTER.md`: one lead plus applicable evidence, UX, technical and retrieval checks. Role definitions/customer hypotheses are in `docs/Research/SMARTSHOPCA_ROLE_PACK_DRAFT_2026-10-15.md`. The router remains assistant instruction routing, not a background service or evaluated classifier. Day 11 adds one separate custom evidence-monitor definition; it has not been live-piloted or scheduled.
+
+**Latest completed work (2026-10-16):** Supported framework upgrade with async archive params, React/types/Node target, non-interactive ESLint and compatible transitive fixes. Preserved UX R2 and held product content; verified build/lint/tests/clean install/browser behavior. No commit, push, deployment, outreach, application or spending.
 
 **Header direction (2026-10-14):** Founder supplied a Banana Republic navigation reference. Local header now puts the brand/utility links above a dedicated two-column category bar. Seasonal and personal-care/household links remain visible at phone widths as well as desktop. Build passed; deployment remains unchanged.
 
@@ -180,7 +186,7 @@ Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_20
 2. Confirm and test the business inbox, then expose contact/corrections details.
 3. Connect Kit through a real server-side subscription action with topic preferences, consent, confirmation and provider failure handling; update privacy in the same change. Never put credentials into tracked files.
 4. Review the useful original website/content against the researched brand-program criteria, then prepare truthful affiliate applications. No application submission is authorized yet; acceptance is not guaranteed by design.
-5. Establish durable click reporting and a non-interactive lint configuration. Keep the existing passing editorial tests.
+5. Establish durable click reporting and resolve the remaining dependency audit findings in a separate scoped change. Keep the passing non-interactive lint and editorial tests.
 6. Complete pre-publish review, reconcile changes with Git and deploy only with explicit user authorization; verify the live routes after deployment. Historical pre-publish templates contain tech/finance assumptions that need category-specific review.
 
 **Preserved decisions:** one umbrella brand, two visible pillars; skincare first with both face/body; household later with separate methods; grounded founder story; no absolute safety claims; no fabricated reviews/testing/affiliate membership; outside-LLM research prompt when a research gap cannot be completed here (Golden Rule 28).

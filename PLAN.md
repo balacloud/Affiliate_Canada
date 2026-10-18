@@ -1,5 +1,7 @@
 # SmartShopCA.ca — Master Plan Document
 
+> **Historical baseline:** This document records the original single-pillar home-office plan. For the current multi-pillar product direction, use `docs/stable/BRAND_ARCHITECTURE.md`; for current implementation state, use `CLAUDE_CONTEXT.md`.
+
 > **Domain:** smartshopca.ca (registered)
 > **Stack:** Next.js 14+ / TypeScript / Tailwind CSS / MDX / Vercel
 > **Revenue target:** $2,000 CAD/month within 9–12 months

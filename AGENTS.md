@@ -37,7 +37,19 @@ When documents disagree, prefer actual implemented behavior, then the latest dat
 
 ## Verification and change control
 
+- For framework work, read version-matched Next.js documentation in `node_modules/next/dist/docs/`; the upgrade guide is `01-app/02-guides/upgrading/version-16.md`. Installed packages and the lockfile determine the actual version.
+
 - Preserve unrelated user changes in the working tree.
-- Run the smallest relevant verification for a change. For application changes, run `npm run build`; report that lint is not established until a non-interactive lint configuration exists.
+- Run the smallest relevant verification for a change. For application changes, run `npm run build` and the established non-interactive `npm run lint`; run `npm run test:editorial` for editorial gates, navigation helpers, or dependency/runtime changes. Next.js 16 builds do not run ESLint automatically.
 - Do not claim a feature is live merely because it exists locally. Check git, the deployment source, and the live route when deployment status matters.
 - A request to close or checkpoint a session authorizes updating the session/status documents. Commit only when the user explicitly requests a commit, save, checkpoint, or session close. Never push or deploy without explicit authorization.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

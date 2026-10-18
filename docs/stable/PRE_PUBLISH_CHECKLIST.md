@@ -49,6 +49,20 @@
 - [ ] 29. **All links open correctly** — click every `<OutboundLink />`, confirm correct Canadian merchant page
 - [ ] 30. **Click tracker fires** — devtools Network tab confirms `/api/track-click` POST fires on each CTA click
 
+## Pillar-Specific Addendum
+
+For every pillar page, also verify:
+
+- [ ] The pillar and reader intent are explicit; unrelated products are not mixed into the shortlist.
+- [ ] Every Canadian-origin statement defines whether it means ownership, headquarters, manufacturing, formulation, ingredients, or availability.
+- [ ] Subscriber tagging records the reader's pillar preference.
+
+For skincare pages, also verify:
+
+- [ ] Ingredient and certification claims link to traceable sources and show a last-reviewed date.
+- [ ] The screening methodology, rule/version, limitations, and uncertainty are visible.
+- [ ] The page avoids unsupported absolute safety claims and clearly states that it does not provide medical advice.
+
 ---
 
 ## Scoring

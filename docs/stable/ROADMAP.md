@@ -1,19 +1,30 @@
 # Roadmap — SmartShopCA.ca
 
 > **Current Phase:** Product architecture reconciliation and launch readiness
-> **Current Version:** Day 8 local checkpoint; initial redesign saved locally, Claude UX round 2 verified but not integrated; no production release
+> **Current Version:** Day 11 local working tree; Next.js 16.4.2 / React 19.3.1, UX R2 retained; no production release
 
 ---
 
 ## October 2026 Direction Reset
+
+**Day 11 monitor/map — 2026-10-17:** Evidence-monitor operating profile and one custom agent definition created; six professional lenses and two existing skills mapped in interactive HTML. No daily schedule or live research pilot activated. See `docs/status/PROJECT_STATUS_DAY11_SHORT.md`.
+
+- [x] Define report-only Product Evidence Monitor and visual persona/agent inventory
+- [ ] Run/review initial evidence baseline and evaluate the specified failure cases
+- [ ] Activate and verify a project-scoped daily task after the pilot; 09:00 Toronto is a proposed cadence
+
+**Day 10 upgrade — 2026-10-16:** Next.js 16.4.2 / React 19.3.1, Node 22 target and ESLint 10 established locally. Build/lint/26 tests/clean install/64 browser states/12 fragment checks pass. Residual dependency advisories documented; no deployment. See `docs/status/PROJECT_STATUS_DAY10_SHORT.md`.
+
+**Day 9 integration — 2026-10-15:** UX R2 merged locally with Key differences before product cards. Root build/26 tests/52 browser states/12 fragment checks pass; candidate records unchanged. No commit, push or deployment. See `docs/status/PROJECT_STATUS_DAY9_SHORT.md`.
 
 **Day 8 close — 2026-10-15:** Initial app build and 14 tests pass. UX round 2 passes build/26 tests/52 browser states in isolation, including the two previous fragment-navigation failures. No production changes. See `docs/status/PROJECT_STATUS_DAY8_SHORT.md`.
 
 - [x] Establish six working lenses and automatic task/persona routing in repository instructions
 - [x] Establish dedicated dated Claude Design handoff folders and preserve returned artifacts
 - [x] Independently verify Claude UX revision R2
-- [ ] **Next:** integrate R2, move Key differences above product cards, include new tests in normal script and verify merged app
-- [ ] Upgrade Next.js to a supported patched release as a separate verified change
+- [x] Integrate R2, move Key differences above product cards, include new tests in normal script and verify merged app (Day 9)
+- [x] Upgrade Next.js to a supported patched release as a separate verified change (Day 10)
+- [ ] Resolve remaining legacy-parser and Tailwind/glob/selector dependency advisories in a scoped follow-up
 - [ ] Resolve product-evidence/contact/email and crawler/canonical launch blockers before release
 
 **Local integration — 2026-10-14:** Claude design/code imported and checked. Nine editorial pages and legacy archive states now work locally; build, 14 tests and 27 browser route/viewport checks passed. Email/contact/affiliates remain unconnected or unconfirmed; products remain research holds. No push or deployment. See `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_2026-10-14.md`.
@@ -35,7 +46,7 @@ SmartShopCA is one Canada-first, multi-affiliate discovery brand with two separa
 - [ ] Convert the skincare prototype into sourced, production-ready application content
 - [x] Remove stale commerce from local homepage/legacy routes; legacy URLs now show archive notices (live deployment pending)
 - [x] Add 14 passing editorial purchase-gate/outbound-contract tests
-- [ ] Configure non-interactive lint and broader content validation
+- [x] Configure non-interactive lint (Day 10); broader content validation remains future work
 - [ ] Reconcile local, GitHub, Vercel, and canonical documentation state
 
 ---
@@ -232,3 +243,5 @@ This is documented as a conscious trade-off, not an oversight.
 | v0.1.3 | 2026-05-14 | Privacy policy page added, footer updated, KI-012 resolved |
 | v0.1.4 | 2026-10-09 | Codex-native governance and multi-pillar SmartShopCA direction documented |
 | Day 8 checkpoint | 2026-10-15 | Initial two-pillar app saved locally; R2 UX verified but not integrated; no new release tag or deployment |
+| Day 9 working tree | 2026-10-15 | R2 integrated with section reorder; build/26 tests/52 browser states/12 fragment checks pass; no commit or deployment |
+| Day 10 working tree | 2026-10-16 | Next.js 16.4.2 / React 19.3.1; build/lint/26 tests/clean install/64 browser states pass; no commit or deployment |
