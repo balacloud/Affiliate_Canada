@@ -1,7 +1,7 @@
 # Memory Index — SmartShopCA.ca
 
 ## Project
-- [../docs/status/PROJECT_STATUS_DAY8_SHORT.md](../docs/status/PROJECT_STATUS_DAY8_SHORT.md) — Latest close: R2 verified but not integrated; exact archive and next steps
+- [../docs/status/SESSION_CHECKPOINT_2026-10-19.md](../docs/status/SESSION_CHECKPOINT_2026-10-19.md) — Latest checkpoint: local website finishing, competitor/external strategy synthesis and dropshipping feasibility; resume task and deployment limits
 - [../docs/stable/PERSONA_ROUTER.md](../docs/stable/PERSONA_ROUTER.md) — Automatically select one lead and relevant checks; no autonomous agents implied
 - [project_overview.md](project_overview.md) — SmartShopCA.ca project context and current phase
 - [../docs/stable/BRAND_ARCHITECTURE.md](../docs/stable/BRAND_ARCHITECTURE.md) — Canonical multi-pillar product direction and evidence boundaries
@@ -16,6 +16,10 @@
 
 ## User
 
+- Confirmed October 19: preserve both affiliate referrals and supplier-fulfilled retail as business paths. Do not turn external-model affiliate-only recommendations into an approved decision to shelve dropshipping. Existing-brand resale, wholesale stock, private-label and POD are different models; accepted supplier/SKU/terms remain UNKNOWN. Research saved in `docs/Research/DROPSHIPPING_FEASIBILITY_2026-10-19.md` and `STRATEGY_SYNTHESIS_2026-10-19.md`.
+- Confirmed October 19: Balaji Kothandaraman — Founder & Product Lead; Sathyadevi — Co-founder & Research Contributor. Personal profiles on About only; elsewhere use Research by the SmartShopCA team. Preferred tagline: Canadian products. Clearer choices. Discuss material direction/design changes before implementing them.
+- October 19 service state: GoDaddy domain/DNS, Vercel website, Namecheap Launch email trial October 19–November 19 with no mailbox/receive-reply verification yet, Kit separate future newsletter service. No secrets in memory. See SERVICE_PROVIDERS.md for current verified setup state.
+
 - Founder profile confirmed 2026-10-14: Balaji Kothandaraman, Kitchener, Ontario, Canada; father in early 40s with two children, seeking good products/clearer labels. Founder confirms supplied career/profile and repository-analysis information as accurate. Relevant About credentials: 18+ years software engineering/technical delivery, insurance/financial-data experience, data integrity/reconciliation, governance/quality review, and AI-assisted research/decision-system design. Use a concise research-led founder bio; no invented healthcare expertise, child-health claims, hands-on skincare testing, team, employer endorsement or LinkedIn URL. Technical certifications and MBA are supplied but optional for consumer copy; LinkedIn followers are not SmartShopCA audience metrics.
 
 - Confirmed 2026-10-14: launch Canadian-made personal care/household with skincare first, covering both face and body moisturizers in separate comparisons. Do not keep asking founder to choose between them. Prefer community-first discovery; product evidence and launch implementation remain pending.
@@ -24,7 +28,7 @@
 - [Research continuation and source attribution](../docs/Research/CANADIAN_SAAS_RESEARCH_HANDOFF_2026-10-14.md) — Generic SaaS tangent: ChatGPT/Gemini opportunity reports, Perplexity prompt critique; not a SmartShopCA pivot.
 
 ## Feedback
-- Day 8 close, 2026-10-15: next task is integrate the 19-file UX R2 ZIP under `docs/Claude_Design_Handoff/New_oct12_2026_2pm/`, move Key differences before cards, wire both test files and verify merged app. Root build/14 tests pass; R2 build/26 tests/52 browser states pass only in isolation. No integration, supported-version upgrade, push or deployment yet.
+- Historical Day 8 close (superseded by later integration/upgrade and October 19 checkpoint), 2026-10-15: next task was integrate the 19-file UX R2 ZIP under `docs/Claude_Design_Handoff/New_oct12_2026_2pm/`, move Key differences before cards, wire both test files and verify merged app. Root build/14 tests pass; R2 build/26 tests/52 browser states pass only in isolation. No integration, supported-version upgrade, push or deployment yet.
 - Confirmed 2026-10-15: keep all new Claude Design handoff briefs, baseline ZIPs and returned artifacts together in dated task subfolders under `docs/Claude_Design_Handoff/`. Its README points to the current task. The October 15 UX brief/baseline moved there from Research; original historical handoffs remain in place.
 - Reaffirmed 2026-10-14: homepage and navigation must visibly preserve both distinct SmartShopCA pillars, Seasonal Canadian favourites and Canadian-made personal care & household. Skincare-first is sequencing, not a skincare-only rebrand. Face/body comparisons belong within the second pillar. Do not interpret an unlaunched pillar as permission to hide or collapse its identity.
 - Confirmed 2026-10-14: use existing Reddit, forums and accessible Facebook discussions for initial buyer feedback/discovery. Do not require literal interviews as a launch gate; interviews are optional for remaining questions. Attribute community observations, keep contrary cases, and distinguish them from representative demand or verified product claims.
