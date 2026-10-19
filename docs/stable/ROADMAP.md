@@ -7,6 +7,10 @@
 
 ## October 2026 Direction Reset
 
+**Push authorized — 2026-10-19:** User explicitly authorized a normal GitHub push after history review. Remote/live results need verification; automatic Vercel deployment is possible. Preserve uncommitted drafts; no history rewrite or separate paused-state implementation.
+
+**History review — 2026-10-19:** All 25 older history flags reviewed; no confirmed secret or mandatory exclusion established. Screenshots/ZIPs checked, 611 text versions scanned; age minimization in five founder-context documents is optional. GitHub repo verified public. This resolves the earlier blanket history hold; live safety approval and deployment-source/trigger verification remain pending. No push/deploy or history rewrite. See `docs/status/UNPUBLISHED_HISTORY_REVIEW_2026-10-19.md`.
+
 **Day 12 commit/live audit — 2026-10-18:** User approved confident files; five logical commits save 56 changed paths, fresh lint/build/26 tests pass. Public site still serves spring placeholders and fake signup with privacy 404. Strategy snapshot saved; pause/hide/noindex safety proposal awaits approval. Older unpublished-history privacy/scope flags and unknown Vercel push triggers block push. No deployment; no approved launch-scope change. See `docs/status/PROJECT_STATUS_DAY12_SHORT.md`.
 
 **Day 11 monitor/map — 2026-10-17:** Evidence-monitor operating profile and one custom agent definition created; six professional lenses and two existing skills mapped in interactive HTML. No daily schedule or live research pilot activated. See `docs/status/PROJECT_STATUS_DAY11_SHORT.md`.

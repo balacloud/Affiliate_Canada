@@ -1,7 +1,7 @@
 # SmartShopCA.ca — Master Session Guide
 
-> **Last Updated:** 2026-10-18 (Day 12 — approved local commits and live-site strategy audit)
-> **Current Version:** Day 12 local checkpoint, Next.js 16.4.2 / React 19.3.1; approved UX/runtime/tooling/monitor files committed. No push, release tag or deployment.
+> **Last Updated:** 2026-10-19 (unpublished-history review; Day 12 implementation checkpoint retained)
+> **Current Version:** Day 12 checkpoint, Next.js 16.4.2 / React 19.3.1; approved UX/runtime/tooling/monitor files committed. Normal GitHub push authorized October 19; remote/live outcome must be verified. No release tag or manual deployment.
 > **Active Campaign:** None in the redesigned experience; seasonal collections are preparing. Legacy Q2 config is retained but archive routes no longer promote it.
 
 ---
@@ -112,7 +112,7 @@ Email is the spine. SEO and AI search citations build on top over time.
 | Claude UX round 2 | INTEGRATED LOCALLY | Key differences precede product cards; default test script runs all 26 tests; upgraded root passes 64 browser states and 12 fragment checks |
 | Lint | PASS LOCALLY | ESLint 10 flat config; Core Web Vitals/TypeScript checks, zero warnings; run separately from build |
 | Local app port | FIXED 3300 | Cross-project/Notion/listener scan completed October 16; start/dev/production scripts agree; busy port fails rather than auto-switching |
-| Git/deployment | APPROVED FILES COMMITTED LOCALLY | Five logical commits save 56 approved changed paths; audit/snapshot recorded separately. Ask/ignore drafts and prior flagged history remain unresolved. No push/deploy. October 18 live check still shows original spring homepage |
+| Git/deployment | APPROVED FILES COMMITTED LOCALLY | Five logical commits save 56 approved changed paths; audit/snapshot recorded separately. October 19 review resolves the 25 older history flags: no confirmed secret/exclusion; age minimization optional. GitHub repository verified public. Uncommitted drafts preserved; no push/deploy. October 19 homepage still shows Spring Setup 2026 |
 | Business validation | PRE-LAUNCH | Community feedback first, interviews optional; buyer focus, evidence, pilot budget/date and conversion remain to validate |
 | Governance | LOCAL | Six working lenses, two project skills and one new product_evidence_monitor custom definition; no live research pilot or active recurring schedule |
 
@@ -169,7 +169,11 @@ Full initial integration result: `docs/status/SMARTSHOPCA_HANDOFF_INTEGRATION_20
 
 ## Next Session Priorities
 
-**Day 12 approval gate — 2026-10-18:** User approved committing confident files only. Five logical commits saved 56 inventoried changed paths; ask/ignore files were not added and the earlier four commits were not rewritten. Lint/build/26 tests freshly pass. Read-only live audit confirms Spring Setup 2026, five placeholder buying destinations, simulated signup success and `/privacy` 404; new care/robots/sitemap routes 404. Deployed SHA, account metrics, current billing and deployment trigger settings UNKNOWN. Strategy snapshot and audit are in `docs/status/`. Proposed minimum safety intervention is hide signup/placeholder CTAs plus paused/noindex; no safety implementation or deployment performed. Stop for that decision. Do not push: 25 ask-classified paths remain in older unpublished history, and an ordinary push may trigger Vercel deployment. No force push or silent history rewrite.
+**Push authorized — 2026-10-19:** Following the completed history review and public-repository disclosure, user instructed "ok push ahead to git". Commit the review/state notes and perform a normal push of main, preserving uncommitted drafts. No force push or history rewrite. Vercel may automatically deploy from GitHub; verify the remote and public routes rather than assuming success. The separate paused-state proposal has not been implemented.
+
+**History review — 2026-10-19 (supersedes the history hold below):** All 25 older ask-classified paths reviewed, including nine screenshots and four ZIPs. Fresh heuristic scan covers 611 text versions; no credential candidates found. No mandatory exclusion established; founder age references in five documents are optional minimization. The March memory snapshot has no founder profile, and the May privacy commit has no flagged paths. Public GitHub API verifies the repository is public, so a push shares documents/history as well as code. No history rewrite, push or deployment performed. See `docs/status/UNPUBLISHED_HISTORY_REVIEW_2026-10-19.md`. The separate live safety proposal and deployment-source/trigger checks remain pending; the acknowledgement to review files is not approval to publish.
+
+**Day 12 approval gate — 2026-10-18 (historical):** User approved committing confident files only. Five logical commits saved 56 inventoried changed paths; ask/ignore files were not added and the earlier four commits were not rewritten. Lint/build/26 tests passed October 18. Read-only live audit confirmed Spring Setup 2026, five placeholder buying destinations, simulated signup success and `/privacy` 404; new care/robots/sitemap routes 404. Deployed SHA, account metrics, current billing and deployment trigger settings UNKNOWN. Strategy snapshot and audit are in `docs/status/`. Proposed minimum safety intervention is hide signup/placeholder CTAs plus paused/noindex; no safety implementation or deployment performed. The then-unreviewed history and possible automatic Vercel deployment deferred push. History-review results above narrow that concern; no force push or silent history rewrite.
 
 **Day 11 monitoring/map update (2026-10-17):** Created `docs/status/SMARTSHOPCA_PERSONA_AGENT_MAP_2026-10-16.html`, `docs/stable/PRODUCT_EVIDENCE_MONITOR.md` and `.codex/agents/product-evidence-monitor.toml` (agent name `product_evidence_monitor`). Six professional lenses and two customer hypotheses remain distinct from agents/skills. Custom definition parses; HTML checks pass at three widths. No live research pilot or active daily schedule; no claim of validated accuracy. Next monitoring step is a reviewable baseline run followed by the defined acceptance cases, then actual scheduler activation/verification. Suggested 09:00 America/Toronto cadence is only a proposal. Existing publication and dependency blockers remain. See Day 11 status.
 
