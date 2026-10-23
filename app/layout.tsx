@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { siteDescription, siteName, siteUrl } from '@/config/site';
+import { siteDescription, siteName, siteTagline, siteUrl } from '@/config/site';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { SiteFooter } from '@/components/site/SiteFooter';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} — Canadian buying guides with the evidence shown`,
+    default: `${siteName} — ${siteTagline}`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     locale: 'en_CA',
     type: 'website',
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 export const viewport: Viewport = {

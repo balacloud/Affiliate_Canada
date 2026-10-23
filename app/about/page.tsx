@@ -1,38 +1,33 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { aboutReviewed, founder, integrations, pillars, siteUrl } from '@/config/site';
+import { aboutReviewed, integrations, pillars, siteSupportingMessage, siteUrl, teamMembers } from '@/config/site';
 import { formatDate } from '@/lib/format';
 import { Breadcrumbs } from '@/components/editorial/Breadcrumbs';
 import { StructuredData } from '@/components/editorial/StructuredData';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: `Who runs SmartShopCA, how its two sections work, how products earn a place, and its current commercial relationships. Founded by ${founder.name} in ${founder.location}.`,
+  description: 'Meet the SmartShopCA team, learn how our two sections work, and understand our research approach and commercial relationships.',
   alternates: { canonical: '/about' },
 };
 
 const method = [
   {
     step: 'Ask a specific question',
-    body: 'Each comparison starts from one buying question, such as which face cream to consider for drier winter months.',
+    body: 'Start with a practical need: what is the product for, and which differences matter to the person considering it?',
   },
   {
     step: 'Compare sources',
-    body: 'Product pages, published ingredient lists, brand policies and official references — each recorded with the date it was checked.',
+    body: 'Read product information, published ingredient lists, merchant policies and relevant official or scientific references. Show sources and the dates checked.',
   },
   {
     step: 'Trace claims to evidence',
-    body: 'A brand-wide statement is labelled as brand-wide. A product-page claim is labelled as a claim. Neither is presented as our own testing.',
+    body: 'Distinguish what a brand says from what the available evidence supports. Reading a product page is not the same as testing the product.',
   },
   {
     step: 'Show what remains unknown',
-    body: 'Gaps are written out in plain words. A product with an essential gap stays a research candidate, without a buying link.',
+    body: 'Explain important gaps. When essential evidence is missing, keep the product as a research candidate rather than a recommendation.',
   },
-];
-
-const placementTypes = [
-  'Clearly labelled affiliate links on comparison pages, for products that have already passed our evidence checks',
-  'Clearly labelled sponsored placements kept separate from editorial shortlists',
 ];
 
 export default function AboutPage() {
@@ -42,7 +37,16 @@ export default function AboutPage() {
     url: `${siteUrl}/about`,
     name: 'About SmartShopCA',
     dateModified: aboutReviewed,
-    publisher: { '@type': 'Organization', name: 'SmartShopCA', founder: { '@type': 'Person', name: founder.name } },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SmartShopCA',
+      founder: teamMembers.map((member) => ({
+        '@type': 'Person', name: member.name, url: `${siteUrl}/about#${member.id}`,
+      })),
+      member: teamMembers.map((member) => ({
+        '@type': 'Person', name: member.name, jobTitle: member.role, url: `${siteUrl}/about#${member.id}`,
+      })),
+    },
   };
 
   return (
@@ -54,30 +58,44 @@ export default function AboutPage() {
             <Breadcrumbs className="text-ink-muted" items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
             <h1 className="heading-display text-[34px] sm:text-[46px]">About SmartShopCA</h1>
             <p className="font-serif text-[22px] leading-snug text-ink sm:text-[24px]">
-              Worthwhile products. Clearer information. A Canadian perspective.
+              {siteSupportingMessage}
             </p>
             <p className="text-[19px] text-ink-body">
-              I&rsquo;m <strong className="text-ink">{founder.name}</strong>, a Canadian father of two based in{' '}
-              <strong className="text-ink">{founder.location}</strong>. SmartShopCA grew from a personal search for
-              worthwhile products and clearer labels — information that helps me understand what I&rsquo;m considering
-              for everyday life.
+              SmartShopCA is a family-led Canadian product discovery and shopping business in development.
+              We&rsquo;re starting with product comparisons and source-based research, while preparing applications
+              for affiliate programs and dropshipping supplier partnerships.
+            </p>
+            <p className="text-ink-body">
+              Our aim is simple: worthwhile products, clearer information and more informed choices.
+              We bring together backgrounds in technology and scientific research to explain what an option offers,
+              how it differs and what still needs checking. Shopping through SmartShopCA is not available yet.
             </p>
           </div>
 
+          <section id="team" aria-labelledby="team-h" className="flex flex-col gap-4">
+            <h2 id="team-h" className="heading-display text-[28px]">Meet the SmartShopCA team</h2>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {teamMembers.map((member) => (
+                <article key={member.id} id={member.id} className="flex flex-col gap-2 rounded-xl border border-line bg-paper p-5">
+                  <h3 className="font-serif text-[23px] font-semibold text-ink">{member.name}</h3>
+                  <p className="text-[15px] font-semibold text-sage-dark">{member.role}</p>
+                  <p className="text-[15px] text-ink-body">{member.bio}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section aria-labelledby="approach" className="flex flex-col gap-4">
             <h2 id="approach" className="heading-display text-[28px]">
-              A personal question, a research-led approach
+              A research-led approach
             </h2>
             <p className="text-ink-body">
-              I bring more than 18 years of experience in software engineering and technical delivery, including work
-              with complex insurance and financial-data systems. That work has involved checking data integrity,
-              reconciling conflicting information, translating requirements into clear decision rules, and building
-              review and quality controls.
+              A useful comparison should help you understand a choice, not simply repeat a product description.
+              We look for differences that matter in everyday use and explain the evidence behind them.
             </p>
             <p className="text-ink-body">
-              I also design and guide AI-assisted research and decision systems. The same discipline shapes SmartShopCA.
-              AI can help organize research; it does not replace checking the sources or taking responsibility for
-              what&rsquo;s published.
+              We use AI to help organise research and draft material. We remain responsible for checking sources
+              and deciding what to publish. AI output alone is not evidence for a product claim.
             </p>
             <ol className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {method.map((m, i) => (
@@ -91,14 +109,15 @@ export default function AboutPage() {
               ))}
             </ol>
             <p className="text-[15px] text-ink-muted">
-              See the method applied: <Link href="/care/skincare/face-moisturizers">face moisturizer comparison</Link> ·{' '}
-              <Link href="/care/skincare/body-moisturizers">body moisturizer comparison</Link>
+              Explore the current research previews: <Link href="/care/skincare/face-moisturizers">face moisturizers</Link> ·{' '}
+              <Link href="/care/skincare/body-moisturizers">body moisturizers</Link>. These are still being checked,
+              not finished recommendations.
             </p>
           </section>
 
           <section aria-labelledby="sections" className="flex flex-col gap-4">
             <h2 id="sections" className="heading-display text-[28px]">
-              One publication, two distinct areas
+              Two areas, one clear purpose
             </h2>
             <div className="flex flex-col gap-1.5 border-l-0 border-t-[3px] border-rust pt-3">
               <h3 className="text-lg font-bold">
@@ -107,9 +126,8 @@ export default function AboutPage() {
                 </Link>
               </h3>
               <p className="text-ink-body">
-                Small selections of useful or distinctive products for the current season. Each shortlist is intended to
-                answer a particular buying question, with reasons an option may — or may not — fit. The first
-                collections are being prepared.
+                Useful or distinctive products for a particular seasonal need, explained through practical
+                differences and trade-offs. The first collections are being prepared.
               </p>
             </div>
             <div className="flex flex-col gap-1.5 border-t-[3px] border-sage pt-3">
@@ -119,80 +137,88 @@ export default function AboutPage() {
                 </Link>
               </h3>
               <p className="text-ink-body">
-                Product origin and transparent ingredient information. We&rsquo;re starting with separate face and body
-                moisturizer comparisons. Laundry detergent and dishwashing liquid are planned for later, with their own
-                review criteria.
+                Product origin and published ingredient information, starting with separate face and body moisturizer
+                research previews. Candidates with missing origin or ingredient evidence remain clearly marked.
+                Household categories may follow, with their own comparison criteria.
               </p>
             </div>
           </section>
 
           <section aria-labelledby="labels" className="flex flex-col gap-3">
             <h2 id="labels" className="heading-display text-[28px]">
-              What clearer labels mean to us
+              Ingredient information, with limits explained
             </h2>
             <p className="text-ink-body">
-              A label should help you understand what you&rsquo;re considering. Our standard is to show the disclosed
-              ingredients, explain the criteria behind a comparison, identify sources and review dates, and make missing
-              information visible.
+              We explain published ingredient information and the criteria used in a comparison. An ingredient list
+              or a screening result alone cannot establish that a product is suitable for you.
             </p>
             <p className="text-ink-body">
-              We don&rsquo;t use &ldquo;clean&rdquo; as a universal safety certificate. Natural ingredients, short
-              ingredient lists and &ldquo;hypoallergenic&rdquo; claims do not establish that a product suits everyone.
-              Our content is informational: it isn&rsquo;t medical advice, and it doesn&rsquo;t guarantee that a product
-              will avoid allergies or other health effects — for adults or for children.
+              We don&rsquo;t treat &ldquo;natural&rdquo;, &ldquo;clean&rdquo; or &ldquo;hypoallergenic&rdquo; as a
+              guarantee against irritation or allergies. Our content is general information, not medical advice
+              or a product safety certification. For concerns about allergies, a skin condition or an individual
+              ingredient, seek advice from a qualified healthcare professional.{' '}
+              <a href="https://www.canada.ca/en/health-canada/services/cosmetics/cosmetic-advertising-labelling-ingredients.html">
+                Read Health Canada&rsquo;s guidance on cosmetic claims
+              </a>.
             </p>
           </section>
 
           <section aria-labelledby="canadian" className="flex flex-col gap-3">
             <h2 id="canadian" className="heading-display text-[28px]">
-              What we mean by Canadian
+              A Canadian focus, with origin made clear
             </h2>
             <p className="text-ink-body">
-              Canadian-owned, manufactured in Canada, and available from a Canadian retailer describe different things.
-              We label those distinctions separately and assess manufacturing claims for the specific product being
-              discussed. A brand&rsquo;s nationality alone does not establish where every product is made.
+              Canadian ownership, Canadian manufacturing and availability from a Canadian retailer mean different
+              things. Where origin matters to a comparison, we describe the evidence for the specific product
+              and identify what remains unconfirmed. A Canadian brand or our maple logo does not, by itself,
+              establish where a product was made.
             </p>
           </section>
 
           <section aria-labelledby="earns" className="flex flex-col gap-3">
             <h2 id="earns" className="heading-display text-[28px]">
-              How a product earns a place
+              How we compare products
             </h2>
             <p className="text-ink-body">
-              Our criteria include fit for the buying question, the quality of available evidence, ingredient
-              preferences where relevant, price in CAD, and practical details such as format, shipping and returns. A
-              recommendation should explain its trade-offs, including who should consider another option.
+              We consider the buying question, available evidence, relevant product details and price in CAD.
+              Shipping, returns and delivered-cost examples are included where information is available. Prices,
+              stock and policies can change; confirm the current terms with the seller before buying.
             </p>
             <p className="text-ink-body">
-              Manufacturer statements and published ingredient lists are different from independent tests or hands-on
-              experience. We identify the evidence used and don&rsquo;t present research as testing we haven&rsquo;t
-              performed. When evidence is insufficient, a product remains a research candidate instead of a
-              recommendation. <Link href="/methodology">Read the full methodology</Link>.
+              The current skincare previews are based on source research, not hands-on product testing. A research
+              hold means that important information is missing; it is not a finding that a product is unsafe.{' '}
+              <Link href="/methodology">Read our research approach and its limits</Link>.
             </p>
           </section>
 
           <section id="relationships" aria-labelledby="relationships-h" className="flex flex-col gap-3">
             <h2 id="relationships-h" className="heading-display text-[28px]">
-              Commercial relationships
+              How we may earn money
             </h2>
             {integrations.affiliate.anyActive ? (
               <p className="text-ink-body">
-                Some links on SmartShopCA are affiliate links: if you buy through one, we may earn a commission at no
-                extra cost to you. Each affiliate link is labelled where it appears.
+                Links marked &ldquo;Affiliate link&rdquo; may earn SmartShopCA a commission when you buy through them.
+                The seller sets the price and terms. Check the disclosure beside the relevant link.
               </p>
             ) : (
               <p className="text-ink-body">
-                SmartShopCA is being prepared for affiliate partnerships, but{' '}
-                <strong className="text-ink">none is confirmed today</strong>. No brand or retailer has paid for
-                coverage. If we later use affiliate links, we may receive a commission when you buy through them, and we
-                will label those links where they appear.
+                We&rsquo;re preparing to apply for affiliate programs. Affiliate links are not currently enabled on
+                this website. Once approved, clearly disclosed links may earn us commissions on qualifying purchases
+                made with another seller.
               </p>
             )}
             <p className="text-ink-body">
-              Our editorial standard is that commissions do not buy inclusion or favourable placement. Suitable products
-              may be included even when they offer no affiliate program, and research and evidence links are never
-              affiliate links.
+              We also plan a curated shop with orders fulfilled by partner suppliers, often called dropshipping.
+              Supplier arrangements are not yet confirmed, and we do not currently accept orders. Delivery, returns
+              and customer-support information will be provided before shopping becomes available.
             </p>
+            <p className="text-ink-body">
+              Our editorial policy is that payment must not buy a favourable research conclusion. Products without
+              affiliate programs may still be considered. Paid placements and other material connections, including
+              gifted products, must be disclosed alongside the relevant content; a general About-page notice alone
+              is not enough.
+            </p>
+            <p className="text-[15px]"><Link href="/disclosure">Read our affiliate disclosure and commercial-content policy</Link>.</p>
           </section>
 
           <section
@@ -201,23 +227,17 @@ export default function AboutPage() {
             className="flex flex-col gap-3 rounded-2xl bg-sand p-6 sm:p-8"
           >
             <h2 id="partnerships-h" className="heading-display text-[24px]">
-              For brands and affiliate programs
+              For brands and retailers
             </h2>
             <p className="text-ink-body">
-              SmartShopCA publishes original comparisons for Canadian readers deciding between a small number of
-              products. Pages add source-dated origin, ingredient and delivered-cost detail that a single merchant page
-              doesn&rsquo;t show side by side.
+              Clear, current product information helps us assess a candidate. Relevant details include the exact
+              variant, manufacturing information, published ingredients where applicable, and Canadian purchase terms.
             </p>
-            <p className="text-ink-body">Placements we may offer in future:</p>
-            <ul className="flex list-disc flex-col gap-1.5 pl-5 text-ink-body">
-              {placementTypes.map((p) => (
-                <li key={p}>{p}</li>
-              ))}
-            </ul>
             <p className="text-ink-body">
-              Neither changes which products are shortlisted, how they&rsquo;re described, or whether an unresolved
-              evidence gap is shown.
+              Providing information or discussing a partnership does not guarantee coverage, a recommendation or
+              the removal of an evidence gap.
             </p>
+            <p className="text-[15px]"><Link href="/partnerships">Partnership information for brands, retailers and suppliers</Link>.</p>
             {integrations.contact.confirmed ? (
               <p>
                 Partnership enquiries:{' '}
@@ -232,10 +252,11 @@ export default function AboutPage() {
 
           <section id="contact" aria-labelledby="accountable" className="flex flex-col gap-3">
             <h2 id="accountable" className="heading-display text-[28px]">
-              Keep us accountable
+              Dates, changes and corrections
             </h2>
             <p className="text-ink-body">
-              Product information changes. Every comparison shows its review dates and makes uncertainty visible.
+              Our comparison pages show review dates and source links. These describe when information was checked;
+              they are not a promise of continuous monitoring.
             </p>
             {integrations.contact.confirmed ? (
               <p className="text-ink-body">
@@ -244,42 +265,13 @@ export default function AboutPage() {
               </p>
             ) : (
               <p className="text-ink-body">
-                A way to report outdated information or request a correction will be listed here once it is set up and
-                monitored.
+                A public corrections contact is not available yet. Until it is set up, consult the linked original
+                sources for current product information.
               </p>
             )}
             <p className="text-sm text-ink-muted">About page reviewed {formatDate(aboutReviewed)}.</p>
           </section>
         </div>
-
-        <aside aria-labelledby="founder-h" className="flex-[1_1_18rem] lg:max-w-[22rem]">
-          <div className="flex flex-col gap-3 rounded-2xl border border-line bg-paper p-6 lg:sticky lg:top-6">
-            <p className="kicker text-ink-muted">Founder</p>
-            <h2 id="founder-h" className="heading-display text-[24px]">
-              {founder.name}
-            </h2>
-            <dl className="flex flex-col gap-2.5 text-[15px]">
-              <div>
-                <dt className="text-ink-muted">Based in</dt>
-                <dd className="font-semibold">{founder.location}, Canada</dd>
-              </div>
-              <div>
-                <dt className="text-ink-muted">Role</dt>
-                <dd className="font-semibold">{founder.role}</dd>
-              </div>
-              <div>
-                <dt className="text-ink-muted">Background</dt>
-                <dd>
-                  18+ years in software engineering and technical delivery; data integrity, reconciliation and review
-                </dd>
-              </div>
-              <div>
-                <dt className="text-ink-muted">Research focus</dt>
-                <dd>Product origin, disclosed ingredients and practical buying trade-offs</dd>
-              </div>
-            </dl>
-          </div>
-        </aside>
       </div>
     </div>
   );

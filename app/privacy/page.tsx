@@ -21,7 +21,8 @@ export default function PrivacyPage() {
           <Breadcrumbs className="text-ink-muted" items={[{ label: 'Home', href: '/' }, { label: 'Privacy' }]} />
           <h1 className="heading-display text-[34px] sm:text-[46px]">Privacy</h1>
           <p className="text-[19px] text-ink-body">
-            SmartShopCA is an editorial buying guide for Canadian readers. This page explains what information the site
+            SmartShopCA currently publishes product research and comparisons for Canadian readers. Shopping features
+            are in development; the site does not currently accept orders. This page explains what information the site
             handles today.
           </p>
         </div>
@@ -37,7 +38,7 @@ export default function PrivacyPage() {
             </p>
           ) : (
             <p className="text-ink-body">
-              Email updates are not switched on yet. There is no sign-up form, and no email addresses are collected.
+              Email updates are not switched on yet. There is no sign-up form, and we do not collect newsletter subscriptions.
             </p>
           )}
         </section>
@@ -70,14 +71,15 @@ export default function PrivacyPage() {
           </h2>
           {integrations.contact.confirmed ? (
             <p className="text-ink-body">
-              Privacy questions: <a href={`mailto:${integrations.contact.address}`}>{integrations.contact.address}</a>
+              If you email us, we receive your email address and the information you include through our business email provider, Namecheap Private Email. We use it to respond to your enquiry and keep relevant correspondence. Please avoid sending personal health information. Privacy questions:{' '}
+              <a href={`mailto:${integrations.contact.address}`}>{integrations.contact.address}</a>
             </p>
           ) : (
             <p className="text-ink-body">
               A privacy contact address will be listed here once it is set up and monitored.
             </p>
           )}
-          <p className="text-sm text-ink-muted">Last updated October 14, 2026.</p>
+          <p className="text-sm text-ink-muted">Last updated October 19, 2026.</p>
         </section>
       </div>
     </div>

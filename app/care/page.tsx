@@ -38,9 +38,9 @@ export default function CarePage() {
             Understand what&rsquo;s in it, and where it was actually made.
           </h1>
           <p className="max-w-[42rem] text-[19px] text-[#2B3A31]">
-            We compare Canadian-made everyday products using their published ingredient lists and product-level origin
-            evidence. Personal care and household products are judged by different criteria, so they&rsquo;re never
-            ranked together.
+            We research everyday products from Canadian brands, checking published ingredients and evidence of where
+            each item is made. Unconfirmed manufacturing claims stay visible. Personal care and household products
+            have different comparison criteria, so they&rsquo;re never ranked together.
           </p>
         </div>
       </section>

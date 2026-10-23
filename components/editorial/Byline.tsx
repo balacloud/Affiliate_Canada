@@ -1,15 +1,13 @@
 import Link from 'next/link';
-import { founder } from '@/config/site';
 
-/** Research byline. Names the real founder; no credentials beyond those confirmed. */
+/** Publication attribution; contributor profiles live on About. */
 export function Byline({ className = '' }: { className?: string }) {
   return (
     <p className={`text-[15px] text-ink-muted ${className}`}>
-      Research editor:{' '}
-      <Link href="/about" className="font-semibold text-ink">
-        {founder.name}
+      Research by the{' '}
+      <Link href="/about#team" className="font-semibold text-ink">
+        SmartShopCA team
       </Link>
-      , {founder.location}
     </p>
   );
 }

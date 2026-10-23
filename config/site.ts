@@ -7,16 +7,18 @@ import type { PillarDefinition, PillarId } from '@/types/editorial';
  */
 
 export const siteName = 'SmartShopCA';
+export const siteTagline = 'Canadian products. Clearer choices.';
+export const siteSupportingMessage = 'Worthwhile products. Clearer information. A Canadian perspective.';
 
 /**
  * Canonical origin for metadata and JSON-LD. Set NEXT_PUBLIC_SITE_URL in the
  * deployment environment; the fallback assumes the domain implied by the
  * repository's contact address and must be confirmed.
  */
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://smartshopca.ca').replace(/\/$/, '');
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.smartshopca.ca').replace(/\/$/, '');
 
 export const siteDescription =
-  'An independent Canadian buying guide: small shortlists with clear origin, ingredient and price evidence.';
+  'Canadian product discovery, clear comparisons and source-based research. Affiliate recommendations and supplier-fulfilled shopping are in development.';
 
 export const pillars: Record<PillarId, PillarDefinition> = {
   seasonal: {
@@ -58,7 +60,8 @@ export const pillars: Record<PillarId, PillarDefinition> = {
 export const pillarOrder: PillarId[] = ['seasonal', 'care'];
 
 /**
- * Founder details confirmed by the founder for public use (2026-10-14).
+ * Founder details confirmed for public use (2026-10-14), limited to About
+ * by the founder's October 19 preference. Other pages use publication attribution.
  * No profile URL is supplied — do not add one until the founder provides it.
  */
 export const founder = {
@@ -66,11 +69,28 @@ export const founder = {
   location: 'Kitchener, Ontario',
   shortBio:
     'Canadian father of two and research-led founder with more than 18 years in software engineering and technical delivery, focused on data integrity and review.',
-  role: 'Founder, researcher and editor',
+  role: 'Founder & Product Lead',
 };
 
 /** Date the About page copy was last reviewed. */
-export const aboutReviewed = '2026-10-14';
+export const aboutReviewed = '2026-10-19';
+
+/** Public team profiles approved October 19; personal details stay on About. */
+export const teamMembers = [
+  {
+    id: 'balaji',
+    name: founder.name,
+    role: 'Founder & Product Lead',
+    bio: 'Balaji brings more than 18 years of experience in software engineering and technical delivery, including data integrity, reconciliation and quality controls. At SmartShopCA, his focus is the platform, product direction and making comparisons easier to use.',
+  },
+  {
+    id: 'sathyadevi',
+    name: 'Sathyadevi',
+    role: 'Co-founder & Research Contributor',
+    bio: 'Sathyadevi holds a Ph.D. in Microbiology-Biochemistry and has training in Applied Clinical Research, with experience in laboratory research and scientific writing. She began contributing to SmartShopCA in October 2026. Her focus is reading scientific literature, examining supporting sources and helping explain product evidence clearly.',
+    joined: '2026-10-19',
+  },
+];
 
 /**
  * Integration states. Nothing here is a secret. Flip a value only after the
@@ -79,8 +99,8 @@ export const aboutReviewed = '2026-10-14';
 export const integrations = {
   /** No subscribe server action exists yet; the email block renders "unavailable". */
   email: { configured: false as boolean },
-  /** The repository names this address, but a working inbox is unconfirmed. */
-  contact: { address: 'hello@smartshopca.ca', confirmed: false as boolean },
+  /** Receive/reply tested by the founder October 22, 2026. */
+  contact: { address: 'support@smartshopca.ca', confirmed: true as boolean },
   /** Affiliate programs have been researched; none is active. */
   affiliate: { anyActive: false as boolean },
 };
@@ -90,4 +110,6 @@ export const primaryNav = [
   { href: pillars.care.href, label: 'Canadian-made personal care & household', fullLabel: pillars.care.label, pillar: 'care' as const },
   { href: '/methodology', label: 'Methodology', fullLabel: 'Methodology' },
   { href: '/about', label: 'About', fullLabel: 'About' },
+  { href: '/partnerships', label: 'For brands', fullLabel: 'For brands and retailers' },
+  { href: '/contact', label: 'Contact', fullLabel: 'Contact' },
 ];

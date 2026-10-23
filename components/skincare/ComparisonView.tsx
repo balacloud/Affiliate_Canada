@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { SkincareComparison, SourceRef } from '@/types/editorial';
-import { founder, pillars, siteUrl } from '@/config/site';
+import { pillars, siteUrl } from '@/config/site';
 import { Byline } from '@/components/editorial/Byline';
 import { formatDate, isPurchaseEligible } from '@/lib/format';
 import { skincareComparisons } from '@/content/skincare';
@@ -54,7 +54,7 @@ export function ComparisonView({ comparison }: { comparison: SkincareComparison 
       url: `${siteUrl}${comparison.path}`,
       dateModified: comparison.reviewed,
       inLanguage: 'en-CA',
-      author: { '@type': 'Person', name: founder.name, url: `${siteUrl}/about` },
+      author: { '@type': 'Organization', name: 'SmartShopCA', url: `${siteUrl}/about` },
       publisher: { '@type': 'Organization', name: 'SmartShopCA' },
     },
   ];

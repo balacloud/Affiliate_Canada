@@ -8,7 +8,7 @@ import { PillarDot } from '@/components/editorial/PillarDot';
 export function SiteHeader() {
   return (
     <header className="relative border-b border-line bg-ivory">
-      <div className="container-page flex min-h-[64px] items-center justify-between gap-6 sm:min-h-[72px] lg:min-h-[84px]">
+      <div className="container-page flex min-h-[64px] items-center justify-between gap-3 sm:min-h-[72px] sm:gap-6 lg:min-h-[84px]">
         <Wordmark />
         <nav aria-label="About SmartShopCA" className="hidden lg:block">
           <ul className="flex items-center gap-7 text-[15px]">
